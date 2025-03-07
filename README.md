@@ -427,7 +427,7 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
 <br>
  Here we explain what is happening on the inputs, we use username input in our explanation <br>
 
-<b>&lt;input type="text" />:</br>
+<b>&lt;input type="text" />: </b></br>
     This is an HTML input element where the user can type text (in this case, a username). <br>
 
 <b>className="form-control":</b>
