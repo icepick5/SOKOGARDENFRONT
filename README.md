@@ -349,25 +349,25 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
 
  Here we explain what is happening on the inputs, we use username input in our explanation <br>
 
-&lt;input type="text" />:
+<b>&lt;input type="text" />:</b>
     This is an HTML input element where the user can type text (in this case, a username). <br>
 
-className="form-control":
+<b>className="form-control":</b>
     This is a CSS class that likely styles the input field. In React, we use className instead of class for applying styles.<br>
 
-placeholder="Enter Username":
+<b>placeholder="Enter Username":</b>
     This is the text that appears inside the input field when it’s empty. It gives a hint to the user about what to type, in this case, a username.<br>
 
-value={username}:
+<b>value={username}:</b>
     This links the value of the input field to a state variable called username. This means the input field will display whatever value is stored in the username state.<br>
 
-onChange={(e) => setUsername(e.target.value)}:
+<b>onChange={(e) => setUsername(e.target.value)}:</b>
     This defines what happens when the user types into the input field. It updates the username state with whatever the user types, so the value in the input is always in sync with the state.<br>
 
-required:
+<b>required:</b>
     This makes the input field mandatory, meaning the user must fill it out before submitting a form.<br>
 
-<br />:
+<b><br />:</b>
     This just adds a line break (an empty space) after the input field.
 
 ```
