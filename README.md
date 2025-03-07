@@ -190,18 +190,18 @@ Below the header tag add below routes.
         {/* This is the default component */}
         <Route path="/" element={<Getproducts/>} />
     </Routes>
-
 ```
 
 
 This code defines client-side routing in a React application using React Router. Here's a breakdown:
 
+```jsx 
 <Routes>: A wrapper that holds multiple <Route> components and ensures only one matching route is rendered at a time. <br><br>
-<Route path="/signup" element={<Signup />} />: When the URL is /signup, the Signup component is rendered.<br><br>
+<Route path="/signup" element={<Signup/>} />: When the URL is /signup, the Signup component is rendered.<br><br>
 <Route path="/signin" element={<Signin />} />: When the URL is /signin, the Signin component is rendered.<br><br>
 <Route path="/addproduct" element={<Addproduct />} />: When the URL is /addproduct, the Addproduct component is rendered.<br><br>
 <Route path="/" element={<Getproducts/>} />: Acts as the default (home) route, rendering Getproducts when the path is /.<br><br>
-
+```
 
 
 
