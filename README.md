@@ -248,9 +248,9 @@ export default App;
 
 <b>Test Your Routes in the Browser. </b><br>
 Signup use:   http://127.0.0.1:3000/signup  <br>
-Signin use: http://127.0.0.1:3000/signin
-Add Products use: http://127.0.0.1:3000/addproducts
-Get products use: http://127.0.0.1:3000/
+Signin use: http://127.0.0.1:3000/signin<br>
+Add Products use: http://127.0.0.1:3000/addproducts<br>
+Get products use: http://127.0.0.1:3000/<br>
 
 
 
@@ -327,7 +327,7 @@ const Signup = () => {
 export default Signup;
 ```
 
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -350,8 +350,9 @@ Then inside the Arrow function, Create below hooks.
 ```
 
 
-In JSX Part create below form. <br>
-Please Note in below input we update the Hooks defined above using <b>onChange</b> onChange function is called when user enter an input. i.e username<br>
+In JSX Part update your form. <br>
+Please Note in below input we update the Hooks defined above using <b>onChange</b> onChange function is called when user enter an input. i.e username<br>   onChange calls the hooks updater function i.e setUsername().
+<br>
 
 ```jsx
   return (
@@ -413,18 +414,20 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
   ```
   <b>NB: In above code, for simplicity, you can do each hook at a time. i.e initialize the username hook, then bind it in the username input and do the onChange().   Then repeat the same for other inputs.</b>
 
-  Run your App 
+  Run your App <br>
   Runs the app in the development mode.\
   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
+  <br>
   Type username and observe how the username hook updates as you type.
 
   ![alt text](image-10.png)
 
+  Above, we typed username "Michelle" and it displays/binds it in realtime. This shows that the username Hook variable updates as you type (onChange)<br>
 
+<br>
  Here we explain what is happening on the inputs, we use username input in our explanation <br>
 
-<b>&lt;input type="text" />:</b>
+<b>&lt;input type="text" />:</br>
     This is an HTML input element where the user can type text (in this case, a username). <br>
 
 <b>className="form-control":</b>
@@ -648,8 +651,10 @@ export default Signup;
 ```
 
 
+### Step 5a: Signup
+In this step, we create a login form. This form will communicate with API created in https://github.com/modcomlearning/BackendAPI(Step5).
 
-
+Open Signin.js
 
 
 
