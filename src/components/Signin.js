@@ -1,10 +1,10 @@
-const Signup = () => {
+const Signin = () => {
     
-    return (
+    return ( 
         <div>
             <h1>Welcome to Signup Component</h1>
         </div>
-      );
+     );
 }
  
-export default Signup;
+export default Signin;
