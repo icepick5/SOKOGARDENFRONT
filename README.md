@@ -23,7 +23,7 @@ Your React App runs as below on the browser.
 ![alt text](image-5.png)
 
 Lets Edit our App.
-in src Folder open App.js and remove the higlighted code(Inside <header> tags) in below screen.
+in src Folder open App.js and remove the higlighted code(remove everything Inside header tags) in below screen.
 
 ![alt text](image-6.png)
 
