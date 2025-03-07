@@ -1,5 +1,5 @@
 # Getting Started with Create React App
-
+### Step 1 : Create React App, File Structure, Run App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In your class Main folder, create a react app using below command
@@ -36,6 +36,9 @@ Run your App
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 <br>
+
+![alt text](image-7.png)
+<br>
 <b>Install React Router </b> <br>
 ```
    npm install react-router-dom
@@ -43,6 +46,40 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 React Router will be used to create navigation in our App.
 <br>
+
+### Step 2: Components Creation
+In this Project we will have Components to represent different user interfaces. i.e Signup, Signin, GetProducts, Addproducts, MakePayment, Navbar, Footer etc <br>
+
+Above components MUST be created inside the src Folder,
+in src Folder, create a subfolder named components. <br>
+
+Right Click on components folder you created above - Select New File - File name Enter - Signup.js.
+
+Inside Signup.js type below code.
+
+```
+javascript
+  const Signup = () => {
+    return (
+        <div>
+            <h1>Welcome to Signup Component</h1>
+        </div>
+      );
+}
+ 
+export default Signup;
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
 
