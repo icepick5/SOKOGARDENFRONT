@@ -8,31 +8,7 @@ In your class Main folder, create a react app using below command
 
 
 
-<b>Created App Structure. </b> <br>
-
-sokogarden-app/
-├── node_modules/           # Dependencies installed by npm or yarn
-├── public/
-│   ├── index.html          # The HTML template for the app
-│   ├── favicon.ico         # The favicon for the app
-│   ├── manifest.json       # The web app's metadata (icon, theme, etc.)
-│   └── robots.txt          # Instructions for web crawlers
-├── src/
-│   ├── App.css             # CSS styles for the App component
-│   ├── App.js              # Main App component
-│   ├── App.test.js         # Tests for the App component
-│   ├── index.css           # Global styles
-│   ├── index.js            # Entry point for the app; renders the App component
-│   └── logo.svg            # The React logo (used in the default template)
-├── .gitignore              # Git ignore file
-├── package.json            # Metadata, dependencies, and scripts for the app
-├── package-lock.json       # Locks the dependency versions for consistency
-
-
-
-In the project directory, you can run:
-
-### `npm start`
+![alt text](image-3.png)
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
@@ -43,7 +19,7 @@ You may also see any lint errors in the console.
 
 Your React App runs as below on the browser.
 
-![alt text](image.png)
+![alt text](image-4.png)
 
 Lets Edit our App.
 in src Folder open App.js and remove the higlighted code in below screen.
