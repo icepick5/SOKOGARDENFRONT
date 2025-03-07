@@ -5,7 +5,7 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Addproduct from './components/Addproduct';
 import Getproducts from './components/Getproducts';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/signin" element={<Signin />} />
             <Route path="/addproduct" element={<Addproduct />} />
-            {/* This is the default component */}
+            {/* This is the default route  */}
             <Route path="/" element={<Getproducts/>} />
           </Routes>
     </div>

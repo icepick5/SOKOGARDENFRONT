@@ -42,11 +42,19 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 <b>Install React Router </b> <br>
 ```
    npm install react-router-dom
+   npm install bootstrap
+   npm install axios
 ```
 
-React Router will be used to create navigation in our App.
+React Router will be used to create navigation in our App.  <br>
+Bootstrap will provide CSS Classes for styling.<br>
+Axios will be used in Accessing our Backend APIs created earlier<br>
 <br>
 
+in App.js add below import to make bootstrap available in your App.
+```jsx
+import 'bootstrap/dist/css/bootstrap.min.css';
+```
 
 In App.css, Please change the min-height to 20vh, see below, This reduces the height of the Main App.js component display.
 
@@ -62,7 +70,6 @@ In App.css, Please change the min-height to 20vh, see below, This reduces the he
   color: white;
 }
 ```
-
 
 
 Run your App 
@@ -206,6 +213,52 @@ This code defines client-side routing in a React application using React Router.
 
 <Route path="/" element={<Getproducts/>} />: Acts as the default (home) route, rendering Getproducts when the path is /.<br><br>
 ```
+
+Your Full App.js Code after adding the Router Code
+```jsx
+import logo from './logo.svg';
+import './App.css';
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import Signup from './components/Signup';
+import Signin from './components/Signin';
+import Addproduct from './components/Addproduct';
+import Getproducts from './components/Getproducts';
+
+function App() {
+  return (
+    <Router>
+    <div className="App">
+          <header className="App-header">
+              <h1>SokoGarden - Buy & Sell Online</h1>
+          </header>
+           <Routes>
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Signin />} />
+            <Route path="/addproduct" element={<Addproduct />} />
+            {/* This is the default component */}
+            <Route path="/" element={<Getproducts/>} />
+          </Routes>
+    </div>
+    </Router>
+  );
+}
+
+export default App;
+```
+
+<b>Test Your Routes in the Browser. </b><br>
+Signup use:   http://127.0.0.1:3000/signup  <br>
+Signin use: http://127.0.0.1:3000/signin
+Add Products use: http://127.0.0.1:3000/addproducts
+Get products use: http://127.0.0.1:3000/
+
+
+
+### Step 4: Signup
+In this Step we will work on Signup component, This component connect to the backend through the signup API created in https://github.com/modcomlearning/BackendAPI(Step4) <br>
+
+
+
 
 
 
