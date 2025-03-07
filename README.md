@@ -155,7 +155,7 @@ in App.js add below import for routing capabilities
 ```
 Then inside the App.js, under the JSX code, wrap the 'DIV' with a Router
 
-```jsx
+```javascript
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
@@ -163,23 +163,44 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 
 function App() {
   return (
-     <span style="background-color: yellow; color: black;"><Router></span>
-    <Router>
+
+    <Router>   
       <div className="App">
             <header className="App-header">
                 <h1>SokoGarden - Buy & Sell Online</h1>
             </header>
+
+            
           
       </div>
     </Router>
+
   );
 }
 
 export default App;
+```
+
+Below the header tag add below routes.
+```jsx
+    <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/addproduct" element={<Addproduct />} />
+        {/* This is the default component */}
+        <Route path="/" element={<Getproducts/>} />
+    </Routes>
 
 ```
 
 
+This code defines client-side routing in a React application using React Router. Here's a breakdown:
+
+    <Routes>: A wrapper that holds multiple <Route> components and ensures only one matching route is rendered at a time. <br>
+    <Route path="/signup" element={<Signup />} />: When the URL is /signup, the Signup component is rendered.<br>
+    <Route path="/signin" element={<Signin />} />: When the URL is /signin, the Signin component is rendered.<br>
+    <Route path="/addproduct" element={<Addproduct />} />: When the URL is /addproduct, the Addproduct component is rendered.<br>
+    <Route path="/" element={<Getproducts/>} />: Acts as the default (home) route, rendering Getproducts when the path is /.<br><br>
 
 
 
