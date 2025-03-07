@@ -349,7 +349,7 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
 
  Here we explain what is happening on the inputs, we use username input in our explanation <br>
 
-<input type="text" />:
+ &ltinput type="text" />:
     This is an HTML input element where the user can type text (in this case, a username). <br>
 
 className="form-control":
@@ -369,7 +369,7 @@ required:
 
 <br />:
     This just adds a line break (an empty space) after the input field.
-    
+
 ```
 
 
