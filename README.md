@@ -259,6 +259,123 @@ In this Step we will work on Signup component, This component connect to the bac
 
 
 
+Open Signup.js Component and import below modules to be used in our code.
+Put them before the arrow function 
+
+```jsx
+import { useState } from "react";
+import { Link} from "react-router-dom";
+import axios from "axios";
+```
+
+Then inside the Arrow function, Create below hooks.
+
+```jsx
+  //Below hooks are set to "" since the variables hold no data/strings
+  //The hooks will be updated later in this Program
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
+  //Below hooks are set to false - Boolean
+  //The hook will be updated later in this Program
+  const [loading, setLoading] = useState(false);
+```
+
+
+In JSX Part create below form. <br>
+Please Note in below input we update the Hooks defined above using <b>onChange</b> onChange function is called when user enter an input. i.e username<br>
+
+```jsx
+  return (
+    <div className="row justify-content-center mt-4">
+      <div className="col-md-6 card shadow p-4">
+       
+            <h2>Sign Up</h2>
+            <form>
+             
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                /> <br />
+             
+             
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required /> <br />
+            
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                /> <br />
+        
+             
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter Phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                /> <br />
+          
+              <button type="submit" className="btn btn-primary">
+                Sign Up
+              </button>
+            </form>
+        
+              Already have an account? <Link to="/signin">Sign In</Link>
+           
+      </div>
+    </div>
+  );
+
+  ```
+
+ Here we explain what is happening on the inputs, we use username input in our explanation <br>
+
+<input type="text" />:
+    This is an HTML input element where the user can type text (in this case, a username). <br>
+
+className="form-control":
+    This is a CSS class that likely styles the input field. In React, we use className instead of class for applying styles.<br>
+
+placeholder="Enter Username":
+    This is the text that appears inside the input field when it’s empty. It gives a hint to the user about what to type, in this case, a username.<br>
+
+value={username}:
+    This links the value of the input field to a state variable called username. This means the input field will display whatever value is stored in the username state.<br>
+
+onChange={(e) => setUsername(e.target.value)}:
+    This defines what happens when the user types into the input field. It updates the username state with whatever the user types, so the value in the input is always in sync with the state.<br>
+
+required:
+    This makes the input field mandatory, meaning the user must fill it out before submitting a form.<br>
+
+<br />:
+    This just adds a line break (an empty space) after the input field.
+    
+```
+
+
+
+
+
 
 
 
