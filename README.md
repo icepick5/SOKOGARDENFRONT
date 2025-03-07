@@ -254,18 +254,16 @@ Get products use: http://127.0.0.1:3000/
 
 
 
-### Step 4: Signup
-In this Step we will work on Signup component, This component connect to the backend through the signup API created in https://github.com/modcomlearning/BackendAPI(Step4) <br>
-
-
-
+### Step 4a: Signup
+In this Step we will work on Signup component, This component connect to the backend through the signup API created in https://github.com/modcomlearning/BackendAPI(Step4) <br>  NB: Please check Full component code at the end of this Step.
+<br>
 Open Signup.js Component and import below modules to be used in our code.
 Put them before the arrow function 
 
 ```jsx
-import { useState } from "react";
-import { Link} from "react-router-dom";
-import axios from "axios";
+import { useState } from "react";  // for state management
+import { Link } from "react-router-dom"; //for routing
+import axios from "axios"; //For backend API access
 ```
 
 Then inside the Arrow function, Create below hooks.
@@ -279,10 +277,7 @@ Then inside the Arrow function, Create below hooks.
   const [phone, setPhone] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
-
-  //Below hooks are set to false - Boolean
-  //The hook will be updated later in this Program
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState("");
 ```
 
 
@@ -293,7 +288,7 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
   return (
     <div className="row justify-content-center mt-4">
       <div className="col-md-6 card shadow p-4">
-       
+            
             <h2>Sign Up</h2>
             <form>
              
@@ -334,13 +329,12 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
                   required
                 /> <br />
           
-              <button type="submit" className="btn btn-primary">
-                Sign Up
-              </button>
+                <button type="submit" className="btn btn-primary">
+                    Sign Up
+                </button>
             </form>
         
               Already have an account? <Link to="/signin">Sign In</Link>
-           
       </div>
     </div>
   );
@@ -370,6 +364,190 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
 <b>&lt;br /&gt; :</b>
     This just adds a line break (an empty space) after the input field.
 
+
+### Step 4b: Signup
+Now we've created Hooks, a form that updates the hooks on input change(onChange).
+
+Next, we need to create a function to submit the data to our API.
+inside the arrow function of Signup.js, add below function.
+
+    ```jsx 
+    //create function
+    const submit = async (e) => {
+        // Prevents JS default actions as we need to do our own action below
+        e.preventDefault();
+        //set loading hook variable to true, show loading message
+        setLoading("Please wait as we upload your data!");
+
+        try {
+        //append updated hooks variables into data varaible 
+        const data = new FormData();
+        data.append("username", username);
+        data.append("email", email);
+        data.append("password", password);
+        data.append("phone", phone);
+
+        //use axios to post above data to our Backend API
+        const response = await axios.post(
+            "https://modcom2.pythonanywhere.com/api/signup",
+            data
+        );
+       setLoading("");
+        //Set loading variable to false. 
+        setLoading(false);
+        setSuccess(response.data.message);
+
+
+        // Clear form fields
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setPhone("");
+
+        //Catch errora/Exeptions
+        } catch (error) {
+        setLoading(false);
+        setError(error.message);
+        }
+    };
+
+    ```
+
+Next, go back to your form and add below atttribute in the form openning tag like below.
+```jsx
+   <form onSubmit={submit}>
+```
+
+<br>
+After calling the submit function we need to bind loading, success and error hooks inside the form.
+
+So, add below inside the form tag
+```jsx
+ {loading}
+ {success}
+ {error}
+```
+<br>
+Done.
+
+<b>Full Signup.js Code.</b><br>
+
+```jsx
+
+import { useState } from "react"; //used for state management
+import { Link} from "react-router-dom"; //used for routing
+import axios from "axios"; //used for API access
+
+//Arrow function
+const Signup = () => {
+    //Initialize Hooks
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [phone, setPhone] = useState("");
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState("");
+
+  //submit function
+  const submit = async (e) => {
+    e.preventDefault(); // prebent default JS actions
+    //Update loading Hook with a message
+    setLoading("Please wait as we upload your data!");
+
+    try {
+      // Put updated hooksin data variable
+      const data = new FormData();
+      data.append("username", username);
+      data.append("email", email);
+      data.append("password", password);
+      data.append("phone", phone);
+
+      //post your data to your Backend API
+      const response = await axios.post(
+        "https://modcom2.pythonanywhere.com/api/signup",
+        data
+      );
+      //After data has been posted, set success hook variable to empty
+      setLoading("");
+      //Update success hook with a success message
+      setSuccess(response.data.message);
+
+
+      // Clear form fields
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      setPhone("");
+
+    //Catch any errors/exceptions
+    } catch (error) {
+      setLoading("");//Update loading hook variable  to empty
+      setError(error.message);
+    }
+  };
+
+  return (
+    <div className="row justify-content-center mt-4">
+      <div className="col-md-6 card shadow p-4">
+            
+            <h2>Sign Up</h2>
+            <form onSubmit={submit}>
+                {loading}
+                {success}
+                {error}
+             
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter Username"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                /> <br />
+                {username}
+             
+             
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required /> <br />
+            
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                /> <br />
+        
+             
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter Phone"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
+                  required
+                /> <br />
+          
+              <button type="submit" className="btn btn-primary">
+                Sign Up
+              </button>
+            </form>
+        
+              Already have an account? <Link to="/signin">Sign In</Link>
+           
+      </div>
+    </div>
+  );
+};
+
+export default Signup;
 ```
 
 
