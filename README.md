@@ -266,6 +266,77 @@ import { Link } from "react-router-dom"; //for routing
 import axios from "axios"; //For backend API access
 ```
 
+Next, we create a signup form in JSX. the form has username, email, password, phone input Fields.
+Updated Signup.js Code.
+
+```jsx
+import { useState } from "react"; //used for state management
+import { Link} from "react-router-dom"; //used for routing
+import axios from "axios"; //used for API access
+
+//Arrow function
+const Signup = () => {
+
+  return (
+    <div className="row justify-content-center mt-4">
+      <div className="col-md-6 card shadow p-4">
+            
+            <h2>Sign Up</h2>
+            <form>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter Username"
+                  required
+                /> <br />
+               
+             
+                <input
+                  type="email"
+                  className="form-control"
+                  placeholder="Enter Email"
+                  required /> <br />
+            
+                <input
+                  type="password"
+                  className="form-control"
+                  placeholder="Enter Password"
+                  required
+                /> <br />
+        
+             
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Enter Phone"
+                  required
+                /> <br />
+          
+              <button type="submit" className="btn btn-primary">
+                Sign Up
+              </button>
+            </form>
+        
+              Already have an account? <Link to="/signin">Sign In</Link>
+           
+      </div>
+    </div>
+  );
+};
+
+export default Signup;
+```
+
+Run your App 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+Output - A Signup Form.
+
+![alt text](image-9.png)
+
+
+
 Then inside the Arrow function, Create below hooks.
 
 ```jsx
@@ -275,9 +346,7 @@ Then inside the Arrow function, Create below hooks.
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
-  const [success, setSuccess] = useState("");
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState("");
+
 ```
 
 
@@ -300,7 +369,9 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
                   onChange={(e) => setUsername(e.target.value)}
                   required
                 /> <br />
-             
+                  {/* Below for testing onChange() concept */}
+                 {username}
+              
              
                 <input
                   type="email"
@@ -340,6 +411,16 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
   );
 
   ```
+  <b>NB: In above code, for simplicity, you can do each hook at a time. i.e initialize the username hook, then bind it in the username input and do the onChange().   Then repeat the same for other inputs.</b>
+
+  Run your App 
+  Runs the app in the development mode.\
+  Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+  Type username and observe how the username hook updates as you type.
+
+  ![alt text](image-10.png)
+
 
  Here we explain what is happening on the inputs, we use username input in our explanation <br>
 
@@ -365,11 +446,23 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
     This just adds a line break (an empty space) after the input field.
 
 
+
 ### Step 4b: Signup
 Now we've created Hooks, a form that updates the hooks on input change(onChange).
 
+
+In Signup.jsx, create below hooks for loading, success and error messages.
+We set below hooks to empty strings, to be updated later in this program.
+<br>
+
+```jsx
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState("");
+```
+
 Next, we need to create a function to submit the data to our API.
-inside the arrow function of Signup.js, add below function.
+inside the arrow function of Signup.js, add below function. This function will collect updated input data(Stored in Hooks) and post to our Backend API
 
     ```jsx 
     //create function
@@ -392,9 +485,10 @@ inside the arrow function of Signup.js, add below function.
             "https://modcom2.pythonanywhere.com/api/signup",
             data
         );
-       setLoading("");
-        //Set loading variable to false. 
-        setLoading(false);
+          //Set loading variable to empty string. 
+        setLoading("");
+      
+        //Update success message upon successful data submission/post
         setSuccess(response.data.message);
 
 
@@ -413,15 +507,18 @@ inside the arrow function of Signup.js, add below function.
 
     ```
 
-Next, go back to your form and add below atttribute in the form openning tag like below.
+Next, go back to your form opening tag below and add a <b>onSubmit</b> attribute to call the <b>submit</b> function you created above.
+
 ```jsx
    <form onSubmit={submit}>
 ```
 
 <br>
-After calling the submit function we need to bind loading, success and error hooks inside the form.
+After calling the submit function we need to bind loading, success and error hooks inside the form. These will show loading, success and error messages.
+<br>
 
 So, add below inside the form tag
+
 ```jsx
  {loading}
  {success}
@@ -549,6 +646,9 @@ const Signup = () => {
 
 export default Signup;
 ```
+
+
+
 
 
 
