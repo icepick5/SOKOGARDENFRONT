@@ -2,11 +2,11 @@
 
 In this github repo, we will create a eCommerce Frontend web application, ReactJS will be used as the frontend framework. The frontend will interact with the backend API to handle:
 <br>
-✅ User Signup
-✅ User Signin
-✅ Add Product
-✅ Get Products
-✅ Make Payment
+✅ User Signup <br>
+✅ User Signin<br>
+✅ Add Product<br>
+✅ Get Products<br>
+✅ Make Payment<br>
 <br>
 
 Please check the Backend API Implementation here. <br>
