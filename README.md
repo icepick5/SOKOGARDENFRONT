@@ -367,7 +367,7 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
 <b>required:</b>
     This makes the input field mandatory, meaning the user must fill it out before submitting a form.<br>
 
-<b><br />:</b>
+<b>&lt;br /&gt; :</b>
     This just adds a line break (an empty space) after the input field.
 
 ```
