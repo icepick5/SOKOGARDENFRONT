@@ -155,7 +155,7 @@ in App.js add below import for routing capabilities
 ```
 Then inside the App.js, under the JSX code, wrap the 'DIV' with a Router
 
-```javascript
+```jsx
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
