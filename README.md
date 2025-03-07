@@ -20,15 +20,15 @@ You may also see any lint errors in the console.
 
 Your React App runs as below on the browser.
 
-![alt text](image-4.png)
+![alt text](image-5.png)
 
 Lets Edit our App.
 in src Folder open App.js and remove the higlighted code(Inside <header> tags) in below screen.
 
-![alt text](image-1.png)
+![alt text](image-6.png)
 
 
-Replace the code yu removed with a heading and as shown below.
+Replace the code you removed with a heading and as shown below.
 ![alt text](image-2.png)
 
 
