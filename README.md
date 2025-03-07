@@ -57,8 +57,7 @@ Right Click on components folder you created above - Select New File - File name
 
 Inside Signup.js type below code.
 
-```
-javascript
+```javascript
   const Signup = () => {
     return (
         <div>
@@ -69,6 +68,9 @@ javascript
  
 export default Signup;
 ```
+
+
+
 
 
 
