@@ -1,5 +1,22 @@
 # Getting Started with Create React App
-### Step 1 : Create React App, File Structure, Run App
+
+In this github repo, we will create a eCommerce Frontend web application, ReactJS will be used as the frontend framework. The frontend will interact with the backend API to handle:
+<br>
+✅ User Signup
+✅ User Signin
+✅ Add Product
+✅ Get Products
+✅ Make Payment
+<br>
+
+Please check the Backend API Implementation here. <br>
+https://github.com/modcomlearning/BackendAPI
+<br/>
+
+By the end of this repo, you will create an eCommerce web application similar to https://sokogarden.vercel.app/<br>
+
+
+### Step 1 : Create React App, File Structure, Run App.
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 In your class Main folder, create a react app using below command
