@@ -484,7 +484,7 @@ We set below hooks to empty strings, to be updated later in this program.
 Next, we need to create a function to submit the data to our API.
 inside the arrow function of Signup.js, add below function. This function will collect updated input data(Stored in Hooks) and post to our Backend API
 
-    ```jsx 
+```javascript
     //create function
     const submit = async (e) => {
         // Prevents JS default actions as we need to do our own action below
@@ -526,6 +526,7 @@ inside the arrow function of Signup.js, add below function. This function will c
     };
 
     ```
+
 
 Next, go back to your form opening tag below and add a <b>onSubmit</b> attribute to call the <b>submit</b> function you created above.
 
