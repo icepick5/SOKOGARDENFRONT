@@ -47,6 +47,31 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 React Router will be used to create navigation in our App.
 <br>
 
+
+In App.css, Please change the min-height to 20vh, see below, This reduces the height of the Main App.js component display.
+
+```css
+.App-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+```
+
+
+
+Run your App 
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+![alt text](image-8.png)
+
+
 ### Step 2: Components Creation
 In this Project we will have Components to represent different user interfaces. i.e Signup, Signin, GetProducts, Addproducts, MakePayment, Navbar, Footer etc <br>
 
@@ -86,6 +111,94 @@ const Signin = () => {
 export default Signin;
 
 ```
+
+Right Click on components folder - Select New File - File name Enter - Addproduct.js.
+
+Inside Addproduct.js type below code.
+
+```javascript
+    const Addproduct = () => {
+        return ( 
+            <div>
+                <h1>Welcome to Add Products Component</h1>
+            </div>
+        );
+    }
+    
+    export default Addproduct;
+
+```
+Right Click on components folder - Select New File - File name Enter - Getproducts.js.
+
+Inside Getproducts.js type below code.
+
+```javascript
+const Getproducts = () => {
+    return ( 
+        <div>
+            <h1>Welcome to Get Products Components</h1>
+        </div>
+     );
+}
+
+export default Getproducts;
+```
+
+We now have 4 different Components.
+We need to create routing/navigation for them.This means how do we access them on the browser.
+
+### Step 3: Routing
+In this Step we will create Router for our App.
+in App.js add below import for routing capabilities
+ ```javascript
+    import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+```
+Then inside the App.js, under the JSX code, wrap the 'DIV' with a Router
+
+```javascript
+import logo from './logo.svg';
+import './App.css';
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+
+
+function App() {
+  return (
+     <span style="background-color: yellow; color: black;"><Router></span>
+    <Router>
+      <div className="App">
+            <header className="App-header">
+                <h1>SokoGarden - Buy & Sell Online</h1>
+            </header>
+          
+      </div>
+    </Router>
+  );
+}
+
+export default App;
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
