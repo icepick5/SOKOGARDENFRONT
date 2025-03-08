@@ -951,6 +951,7 @@ Open [http://localhost:3000/signin](http://localhost:3000/signin) to view it in 
 Fill in the Details in the form and click sign in.  If user credenatials provided are wrong, You will get an error saying Login Failed, else if user credentials are right, it will navigate to getproducts Component.
 <br/>
 See below screenshot for wrong credentials.
+
 ![alt text](image-12.png)
 
 
