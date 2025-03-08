@@ -1,12 +1,12 @@
 # Getting Started with Create React App
 
 In this github repo, we will create a eCommerce Frontend web application, ReactJS will be used as the frontend framework. The frontend will interact with the backend API to handle:
-<br>
+<br><br>
 ✅ User Signup <br>
 ✅ User Signin<br>
 ✅ Add Product<br>
 ✅ Get Products<br>
-✅ Make Payment<br>
+✅ Make Payment - LIPA NA MPESA<br>
 <br>
 
 Please check the Backend API Implementation here. <br>
@@ -346,12 +346,11 @@ export default Signup;
 
 Run your App <br>
 Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000/signup](http://localhost:3000/signup) to view it in your browser.
 
 Output - A Signup Form.
 
 ![alt text](image-9.png)
-
 
 
 Then inside the Arrow function, Create below hooks.
@@ -433,7 +432,7 @@ Please Note in below input we update the Hooks defined above using <b>onChange</
 
   Run your App <br>
   Runs the app in the development mode.\
-  Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  Open [http://localhost:3000/signup](http://localhost:3000/signup) to view it in your browser.
   <br>
   Type username and observe how the username hook updates as you type.
 
@@ -671,16 +670,16 @@ Run your App
 Runs the app in the development mode.\
 Open [http://localhost:3000/signup](http://localhost:3000/signup) to view it in your browser.
 
+![alt text](image-13.png)
+<br>
 Fill in the Details in the form and click sign up.
 
 
 
-
-### Step 5: Signin
+### Step 5a: Signin
 In this step, we create a login form. This form will communicate with API created in https://github.com/modcomlearning/BackendAPI(Step5).
 
-Open Signin.js
-
+Open Signin.js<br/>
 Create below form 
 
 ```jsx
@@ -793,7 +792,7 @@ const Signin = () => {
 export default Signin;
 ```
 
-
+### Step 5b: Signin
 Next, In your Arrow function, Create a submit function to handle data submission to Backend API.
 
 ```jsx
