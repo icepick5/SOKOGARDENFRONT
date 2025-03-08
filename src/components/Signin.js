@@ -1,55 +1,62 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useState } from "react"; //for state management
+import { Link, useNavigate } from "react-router-dom";  //for routing/navigation
+import axios from "axios"; //for API Access
 
 const Signin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState("false");
-  const [error, setError] = useState("null");
 
-  const navigate = useNavigate(); // For redirection
+  // Initialize hooks to be used in this component.
+  const [email, setEmail] = useState("");  //email hook
+  const [password, setPassword] = useState(""); //password hook
+  const [loading, setLoading] = useState(""); //laoding hook
+  const [error, setError] = useState(""); //error hook
 
+  const navigate = useNavigate() //hook for navigating to a new component
+
+
+  //Function to submit data to API
   const submit = async (e) => {
-    e.preventDefault();
-    setLoading("Please wait as we log you in");
-    setError("");
-
+    e.preventDefault();//Prevent default actions
+    setLoading("Please wait as we log you in");//set progress message
+  
+    //Add data to form data object
     try {
       const data = new FormData();
       data.append("email", email);
       data.append("password", password);
 
+      //Post above data to Backend API
       const response = await axios.post(
         "https://modcom2.pythonanywhere.com/api/signin",
         data);
 
-      setLoading("");
+      setLoading(""); //After successful posting, Clear the loading message
 
+      // Check if the response has user item,
+    
       if (response.data.user) {
-        // Store user details in localStorage or context if needed
+        // If user is Found, Store user details in localStorage
         localStorage.setItem("user", JSON.stringify(response.data.user));
-        // Redirect to /land-details
+        // Redirect to /getproducts Component
         navigate("/");
       } 
       else {
+        //User Not Found, Show Error message
         setError(response.data.message);
       }
+      //If there was an Error, Clear Loading
     } catch (error) {
       setLoading("");
-      setError(err.response.data.message);
+      setError(error.response.data.message);
     }
   };
-
 
   return (
     <div className="row justify-content-center mt-5">
       <div className="col-md-6 card shadow p-4">
             <h2>Sign In</h2>
-
             <form onSubmit={submit}>
-                {loading}
-                {error}
+              {loading}
+              {error}
               <input
                 type="email"
                 className="form-control mb-3"

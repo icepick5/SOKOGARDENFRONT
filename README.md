@@ -525,10 +525,9 @@ inside the arrow function of Signup.js, add below function. This function will c
         }
     };
 
-    ```
+```
 
-
-Next, go back to your form opening tag below and add a <b>onSubmit</b> attribute to call the <b>submit</b> function you created above.
+Next, go back to your form opening tag and add a <b>onSubmit</b> attribute to call the <b>submit</b> function you created above.
 
 ```jsx
    <form onSubmit={submit}>
@@ -668,65 +667,102 @@ const Signup = () => {
 export default Signup;
 ```
 
+Run your App 
+Runs the app in the development mode.\
+Open [http://localhost:3000/signup](http://localhost:3000/signup) to view it in your browser.
 
-### Step 5a: Signup
+Fill in the Details in the form and click sign up.
+
+
+
+
+### Step 5: Signin
 In this step, we create a login form. This form will communicate with API created in https://github.com/modcomlearning/BackendAPI(Step5).
 
 Open Signin.js
 
+Create below form 
+
 ```jsx
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import React, { useState } from "react"; //for state management
+import { Link, useNavigate } from "react-router-dom";  //for routing/navigation
+import axios from "axios"; //for API Access
 
 const Signin = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [loading, setLoading] = useState("false");
-  const [error, setError] = useState("null");
+  // We create a Login form
+  return (
+    <div className="row justify-content-center mt-5">
+      <div className="col-md-6 card shadow p-4">
+            <h2>Sign In</h2>
+            <form>
+              <input
+                type="email"
+                className="form-control mb-3"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="password"
+                className="form-control mb-3"
+                placeholder="Password"
+                required
+              />
+              <button type="submit" className="btn btn-primary w-100">
+                Sign In
+              </button>
+            </form>
+
+              Don't have an account? <Link to="/signup">Sign Up</Link>
+        
+      </div>
+    </div>
+  );
+};
+
+export default Signin;
+```
+
+Run your App <br>
+Runs the app in the development mode.\
+Open [http://localhost:3000/signin](http://localhost:3000/signin) to view it in your browser.
+
+
+![alt text](image-11.png)
+
+
+In your Signin Arrow function, initialize below hooks
+```jsx
+  const [email, setEmail] = useState(""); //email hook variable
+  const [password, setPassword] = useState(""); //password hook variable
+  const [loading, setLoading] = useState(""); //loading hook variable
+  const [error, setError] = useState(""); //error hook variable
 
   const navigate = useNavigate(); // For redirection
+```
 
-  const submit = async (e) => {
-    e.preventDefault();
-    setLoading("Please wait as we log you in");
-    setError("");
 
-    try {
-      const data = new FormData();
-      data.append("email", email);
-      data.append("password", password);
+Next, Update your hooks in the input tags using onChange atribute, see below.
 
-      const response = await axios.post(
-        "https://modcom2.pythonanywhere.com/api/signin",
-        data);
+```jsx
+import React, { useState } from "react"; //for state management
+import { Link, useNavigate } from "react-router-dom";  //for routing/navigation
+import axios from "axios"; //for Backend API Access
 
-      setLoading("");
+const Signin = () => {
+  // We create a Login form
+  
+  const [email, setEmail] = useState("");//email hook variable
+  const [password, setPassword] = useState(""); //password hook variable
+  const [loading, setLoading] = useState("");//loading hook variable
+  const [error, setError] = useState("");//error hook variable
 
-      if (response.data.user) {
-        // Store user details in localStorage or context if needed
-        localStorage.setItem("user", JSON.stringify(response.data.user));
-        // Redirect to /land-details
-        navigate("/");
-      } 
-      else {
-        setError(response.data.message);
-      }
-    } catch (error) {
-      setLoading("");
-      setError(err.response.data.message);
-    }
-  };
-
+  const navigate = useNavigate(); // For redirection to another Component
 
   return (
     <div className="row justify-content-center mt-5">
       <div className="col-md-6 card shadow p-4">
             <h2>Sign In</h2>
-
-            <form onSubmit={submit}>
-                {loading}
-                {error}
+            <form>
               <input
                 type="email"
                 className="form-control mb-3"
@@ -735,6 +771,153 @@ const Signin = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
+              <input
+                type="password"
+                className="form-control mb-3"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn btn-primary w-100">
+                Sign In
+              </button>
+            </form>
+
+              Don't have an account? <Link to="/signup">Sign Up</Link>
+      </div>
+    </div>
+  );
+};
+
+export default Signin;
+```
+
+
+Next, In your Arrow function, Create a submit function to handle data submission to Backend API.
+
+```jsx
+  //Function to submit data to API
+  const submit = async (e) => {
+    e.preventDefault();//Prevent default actions
+    setLoading("Please wait as we log you in");//set progress message
+  
+    //Add data to form data object
+    try {
+      const data = new FormData();
+      data.append("email", email);
+      data.append("password", password);
+
+      //Post above data to Backend API
+      const response = await axios.post(
+        "https://modcom2.pythonanywhere.com/api/signin",
+        data);
+
+      setLoading(""); //After successful posting, Clear the loading message
+
+      // Check if the response has user item,
+    
+      if (response.data.user) {
+        // If user is Found, Store user details in localStorage
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        // Redirect to /getproducts Component
+        navigate("/");
+      } 
+      else {
+        //User Not Found, Show Error message
+        setError(response.data.message);
+      }
+      //If there was an Error, Clear Loading
+    } catch (error) {
+      setLoading("");
+      setError(error.response.data.message);
+    }
+  };
+```
+
+
+Finally, We need to Call submit function created above when a user clicks a the signin button. <br/> In your Form openning tag, add an onSubmit attribute and Call the submit function.
+
+In addition, we need to see the loading and error messages in our Form, Bind/Fix the loading and error hooks inside your form tag.  See below code snippet.<br/>
+
+```jsx
+<form onSubmit={submit}>
+    {loading}
+    {error}
+    ....
+```
+
+
+<b>Full Code for Signin.js</b> <br/>
+
+```jsx
+import { useState } from "react"; //for state management
+import { Link, useNavigate } from "react-router-dom";  //for routing/navigation
+import axios from "axios"; //for API Access
+
+const Signin = () => {
+
+  // Initialize hooks to be used in this component.
+  const [email, setEmail] = useState("");  //email hook
+  const [password, setPassword] = useState(""); //password hook
+  const [loading, setLoading] = useState(""); //laoding hook
+  const [error, setError] = useState(""); //error hook
+
+  const navigate = useNavigate() //hook for navigating to a new component
+
+
+  //Function to submit data to API
+  const submit = async (e) => {
+    e.preventDefault();//Prevent default actions
+    setLoading("Please wait as we log you in");//set progress message
+  
+    //Add data to form data object
+    try {
+      const data = new FormData();
+      data.append("email", email);
+      data.append("password", password);
+
+      //Post above data to Backend API
+      const response = await axios.post(
+        "https://modcom2.pythonanywhere.com/api/signin",
+        data);
+
+      setLoading(""); //After successful posting, Clear the loading message
+
+      // Check if the response has user item,
+    
+      if (response.data.user) {
+        // If user is Found, Store user details in localStorage
+        localStorage.setItem("user", JSON.stringify(response.data.user));
+        // Redirect to /getproducts Component
+        navigate("/");
+      } 
+      else {
+        //User Not Found, Show Error message
+        setError(response.data.message);
+      }
+      //If there was an Error, Clear Loading
+    } catch (error) {
+      setLoading("");
+      setError(error.response.data.message);
+    }
+  };
+
+  return (
+    <div className="row justify-content-center mt-5">
+      <div className="col-md-6 card shadow p-4">
+            <h2>Sign In</h2>
+            <form onSubmit={submit}>
+              {loading}
+              {error}
+              <input
+                type="email"
+                className="form-control mb-3"
+                placeholder="Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />Detials
               <input
                 type="password"
                 className="form-control mb-3"
@@ -761,15 +944,15 @@ export default Signin;
 
 
 
+Run your App 
+Runs the app in the development mode.\
+Open [http://localhost:3000/signin](http://localhost:3000/signin) to view it in your browser.
 
-
-
-
-
-
-
-
-
+<br/>
+Fill in the Details in the form and click sign in.  If user credenatials provided are wrong, You will get an error saying Login Failed, else if user credentials are right, it will navigate to getproducts Component.
+<br/>
+See below screenshot for wrong credentials.
+![alt text](image-12.png)
 
 
 
