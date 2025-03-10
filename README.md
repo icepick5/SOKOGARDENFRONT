@@ -1,3 +1,5 @@
+![alt text](image-14.png)
+<br>
 # Getting Started with Create React App
 
 In this github repo, we will create a eCommerce Frontend web application, ReactJS will be used as the frontend framework. The frontend will interact with the backend API to handle:
