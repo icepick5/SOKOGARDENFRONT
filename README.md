@@ -177,7 +177,7 @@ We need to create routing/navigation for them.This means how do we access them o
 In this Step we will create Router for our App.
 in App.js add below import for routing capabilities
  ```javascript
-    import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+    import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
 ```
 Then inside the App.js, under the JSX code, wrap the 'DIV' with a Router
 
