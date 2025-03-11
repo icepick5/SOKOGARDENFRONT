@@ -521,7 +521,7 @@ inside the arrow function of Signup.js, add below function. This function will c
 
         //Catch errora/Exeptions
         } catch (error) {
-        setLoading(false);
+        setLoading("");
         setError(error.message);
         }
     };
