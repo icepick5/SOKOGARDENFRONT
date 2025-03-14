@@ -9,9 +9,7 @@ const Signin = () => {
   const [password, setPassword] = useState(""); //password hook
   const [loading, setLoading] = useState(""); //laoding hook
   const [error, setError] = useState(""); //error hook
-
   const navigate = useNavigate() //hook for navigating to a new component
-
 
   //Function to submit data to API
   const submit = async (e) => {
@@ -28,25 +26,23 @@ const Signin = () => {
       const response = await axios.post(
         "https://modcom2.pythonanywhere.com/api/signin",
         data);
-
+      
       setLoading(""); //After successful posting, Clear the loading message
-
       // Check if the response has user item,
-    
+      
       if (response.data.user) {
         // If user is Found, Store user details in localStorage
-        localStorage.setItem("user", JSON.stringify(response.data.user));
         // Redirect to /getproducts Component
         navigate("/");
       } 
       else {
         //User Not Found, Show Error message
-        setError(response.data.message);
+        setError("Login Failed");
       }
       //If there was an Error, Clear Loading
     } catch (error) {
       setLoading("");
-      setError(error.response.data.message);
+      setError("There was a server Error");
     }
   };
 

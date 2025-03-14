@@ -6,7 +6,7 @@ import axios from "axios"; //used for API access
 //Arrow function
 const Signup = () => {
     //Initialize Hooks
-  const [username, setUsername] = useState("");
+  const [username, setUsername] = useState("sdgsdg");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [phone, setPhone] = useState("");
@@ -16,6 +16,7 @@ const Signup = () => {
 
   //submit function
   const submit = async (e) => {
+  
     e.preventDefault(); // prebent default JS actions
     //Update loading Hook with a message
     setLoading("Please wait as we upload your data!");
@@ -36,8 +37,9 @@ const Signup = () => {
       //After data has been posted, set success hook variable to empty
       setLoading("");
       //Update success hook with a success message
+      // alert(response.data.message)
       setSuccess(response.data.message);
-
+      
 
       // Clear form fields
       setUsername("");

@@ -957,6 +957,254 @@ See below screenshot for wrong credentials.
 ![alt text](image-12.png)
 
 
+### Step 6a: Upload Product  - Form, Hooks
+In this step we will be Uploading/Adding product to our API created in  https://github.com/modcomlearning/BackendAPI  (Step 6). <br>  Add_product API Demo.
+<br>
+
+Next, create a HTML form for product upload. <br>
+In your React App Open Addproduct.js and import below modules.
+
+```jsx
+import { useState } from "react"; // for variable state mangement
+import axios from "axios"; //for API Access
+import { Link } from "react-router-dom"; //for components linking
+```
+
+Then Initialize below Hooks (Inside your Signup Arrow function).
+
+```jsx
+  const [product_name, setProductName] = useState("");
+  const [product_description, setProductDescription] = useState("");
+  const [product_cost, setProductCost] = useState("");
+  const [product_photo, setProductPhoto] = useState("");
+  const [loading, setLoading] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+```
+Above hooks have been initialized to empty String, we will be updating them later.
+<br>
+Next, Create the Upload HTML Form in JSX <br>
+
+```jsx
+//Imports
+import { useState } from "react";// for variable state mangement
+import axios from "axios";//for API Access
+import { Link } from "react-router-dom"; //for components linking
+
+const Addproduct = () => {
+  //Initialize product details hooks
+  const [product_name, setProductName] = useState("");
+  const [product_description, setProductDescription] = useState("");
+  const [product_cost, setProductCost] = useState("");
+  const [product_photo, setProductPhoto] = useState("");
+
+  // Hooks for information messages
+  const [loading, setLoading] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+
+  
+  //  Do HTML product Upload Form
+  return (
+    <div className="row justify-content-center mt-4">
+      <div className="col-md-6 card shadow p-4">
+        <form>
+            <h3>Upload Products</h3>
+             {/* Call setProductName onChange to update  produce name Hook */}
+            <input
+              type="text"
+              placeholder="Enter Product Name"
+              className="form-control"
+              value={product_name}
+              onChange={(e) => setProductName(e.target.value)}
+              required
+            /> 
+            <br />
+            {/* Call setProductDescription onChange to update  produce description Hook */}
+           <textarea
+              className="form-control"
+              placeholder="Describe your Product"
+              value={product_description}
+              onChange={(e) => setProductDescription(e.target.value)}
+              required
+            ></textarea>
+            <br />
+      
+              {/* Call setProductCost onChange to update  produce cost Hook */}
+            <input
+              type="number"
+              placeholder="Enter Product Cost"
+              className="form-control"
+              value={product_cost}
+              onChange={(e) => setProductCost(e.target.value)}
+              required
+            />
+            <br />
+        
+                {/* Call setProductPhoto onChange to update  produce photo Hook */}
+             <b>Browse/Upload Product Image</b>
+            <input
+              type="file"
+              className="form-control"
+              value={product_photo}
+              accept="image/*"
+              onChange={(e) => setProductPhoto(e.target.files[0])}
+              required
+            />
+            <br />
+     
+          <button type="submit" className="btn btn-primary">
+               Upload Product
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Addproduct;
+```
+<br>
+Run your App 
+Runs the app in the development mode.\
+Open [http://localhost:3000/add_product](http://localhost:3000/add_product) to view it in your browser.
+<br>
+Output.<br>
+
+![alt text](image-15.png)
+
+<br>
+### Step 6b: Upload Product - Submit
+In Step 6a, we created a Product Upload form and Set up the Hooks to be used.
+Next, We do a submit function, This function will collect data from updated Hooks and submit to add_product Backend API.
+
+Inside Signup Arrow Function (Below the Hooks Initialization) create below submit Arrow function.
+
+```jsx
+  const submit = async (e) => {
+     //TODO
+  }
+```
+
+Then in Product Upload Form in JSX call above function using onSubmit() in the form opening tag, This means when the form is submitted it Calls the submit() function.
+
+```jsx
+   <form onSubmit={submit}>
+
+```
+We now continue with submit function Logic<br> This will include capturing product data in updated hooks and POST to our add_product Backend API. <br>
+
+Blow is the submit fucntion implementation.
+
+  ```jsx
+  //Submit Function
+  const submit = async (e) => {
+    //Prevent default actions
+    e.preventDefault();
+    //update loading hook to show progress
+    setLoading("Pleaser wait ... ");
+
+    //add all updated hooks to data variable
+    const data = new FormData();
+    data.append("product_name", product_name);
+    data.append("product_description", product_description);
+    data.append("product_cost", product_cost);
+    data.append("product_photo", product_photo);
+
+    //Post data to Backend API
+    try {
+      const response = await axios.post(
+        "https://modcom2.pythonanywhere.com/api/add_product",
+        data
+      );
+      //Set loding message to empty, after a successful POST to API
+      setLoading("")
+      //Update message hook to successfully Added to notify the user.
+      setMessage("Product Added successfully!");
+    //   setMessage(response.data.success);
+
+      // reset the input fields 
+      setProductName("");
+      setProductDescription("");
+      setProductCost("");
+      setProductPhoto("");
+
+      //Catch Any server error, i.e internet issues , server errors
+    } catch (error) {
+      setError("Failed to add product. Please try again.");
+    }
+  };
+```
+
+Here's the function with the explanation broken down line by line:
+<br>
+Prevent the default form submission behavior:
+
+```javascript
+  e.preventDefault();
+```
+
+Displays a loading message while processing the request:
+
+```javascript
+  setLoading("Please wait ... ");
+```
+
+Collects data from the input fields and appends them to a FormData object:
+
+```javascript
+const data = new FormData();
+data.append("product_name", product_name);
+data.append("product_description", product_description);
+data.append("product_cost", product_cost);
+data.append("product_photo", product_photo);
+```
+
+Sends the collected data to the backend API using a POST request:
+
+```javascript
+const response = await axios.post(
+  "https://modcom2.pythonanywhere.com/api/add_product",
+  data
+);
+```
+
+If the submission is successful:
+<br>
+Clears the loading message:
+
+```javascript
+setLoading("");
+```
+
+Displays a success message:
+
+```javascript
+setMessage("Product Added successfully!");
+```
+
+Resets the input fields to be empty for the next submission:
+
+```javascript
+setProductName("");
+setProductDescription("");
+setProductCost("");
+setProductPhoto("");
+```
+If there is an error (e.g., network issue or server error), it displays an error message:
+
+```javascript
+setError("Failed to add product. Please try again.");
+```
+
+This approach ensures that the process of adding a product to the backend is managed smoothly, with clear feedback to the user for both success and failure scenarios.
+
+
+
+
+
+
+
 
 
 
