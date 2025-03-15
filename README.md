@@ -1378,14 +1378,14 @@ Initialize below Hooks
     const [error, setError] = useState(""); //error message hook
 ```
 
+Specify the image location URL, this is where the image image files were saved in pythonanywhere.<br>. 
 ```jsx
    //Specify image location URL
     const img_url = "https://modcom2.pythonanywhere.com/static/images/"
 ```
 
-
 Next, write below code snippet to get all records from get_product_details Backend API. <br>
-Firs, Create an Arrow  Function named getproducts() and write below code <br>
+First, Create an Arrow  Function named getproducts() and write below code <br>
 
 ```jsx
   const getproducts = async()=>{
@@ -1401,7 +1401,6 @@ Firs, Create an Arrow  Function named getproducts() and write below code <br>
         }
     }//end function
 ```
-
 
 Call Above Functions inside useEffect()
 
@@ -1431,8 +1430,10 @@ The loading message is cleared with setLoading("").
 
 <b>Triggering Fetch on Mount:</b>
 <br>
-The useEffect hook is used to run a function when the component mounts. In this case, it runs the API call to fetch product details when the component first loads (due to the empty dependency array []).
-Inside use Effect, we Call getproducts() function.
+The useEffect hook is used to run a function when the component loads. In this case, it runs the API call to fetch product details when the component first loads. useEffect runs after the component renders.  If you include variables in the array[], useEffect will run whenever those variables change. In our the code inside useEffect run only once when Page loads.
+<br>
+
+Inside use Effect, we Call getproducts() function to fetch all products.
 <br/><br/>
 
 <b>Summary:</b>
