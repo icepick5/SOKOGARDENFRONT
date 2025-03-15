@@ -1356,7 +1356,72 @@ In this step we will be getting all products posted on the API. The get products
 In your React App Open Getproducts.js
 <br>
 
+Import the required modules 
 
+```jsx
+import { useState, useEffect } from "react"; // for state management
+import axios from "axios"; //For API Access
+import { Link } from "react-router-dom"; // For link to other component
+```
+
+
+Initialize below Hooks
+
+```jsx
+   // Initialize Hooks
+    const [products, setProducts] = useState([]);  // Default to empty array instead of a string
+    const [loading, setLoading] = useState(""); //For loading message
+    const [error, setError] = useState(""); //error message hook
+```
+
+
+Next, write below code snippet to get all records from get_product_details Backend API. <br>
+
+```jsx
+  useEffect(() => {
+        setLoading("Please wait, We are retrieving the products .."); // Set loading message when fetching starts
+
+        axios.get("https://modcom2.pythonanywhere.com/api/get_product_details")
+            .then(function (response) {
+                // Update Hooks
+                console.log(response.data);
+                setProducts(response.data); // important - Update products Hook
+                setLoading("");  // Clear loading message
+            })
+            .catch(function (error) {
+                // Update Hooks
+                //console.log(error);
+                setError("There was an Error");
+                setLoading("");  // Clear loading message
+            });
+    }, []); // empty dependency array ensures this runs only once when the component mounts
+```
+<br>
+Here's a simple breakdown of what the useEffect hook does:
+<br>
+Triggering Fetch on Mount:
+<br>
+The useEffect hook is used to run a function when the component mounts. In this case, it runs the API call to fetch product details when the component first loads (due to the empty dependency array []).
+
+<b>Loading State:</b> <br>
+setLoading("Please wait, We are retrieving the products .."); sets a loading message while the data is being fetched.
+<br>
+<b>API Call:</b> <br>
+The axios.get("https://modcom2.pythonanywhere.com/api/get_product_details") makes a GET request to the provided API URL to retrieve product details.
+<br>
+<b>Success Handling: </b> <br>
+On success (.then), the data from the API (response.data) is logged to the console and set into the products state using setProducts(response.data).
+The loading message is cleared with setLoading("").
+<br>
+<b>Error Handling: </b> <br>
+On error (.catch), an error message is set into the error state with setError("There was an Error").
+The loading message is cleared with setLoading("").
+<br>
+<b>Summary:</b>
+1. The hook fetches data when the component mounts. <br>
+2. It shows a loading message while the data is being fetched.<br>
+3. It updates the state with fetched data or shows an error if something goes wrong.<br>
+<br>
 
 
 
