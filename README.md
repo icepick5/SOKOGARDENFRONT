@@ -1718,6 +1718,13 @@ In below form as user types we update the phone Hook using the setPhone() update
 ```
 
 
+Run your App<br>
+Open [http://localhost:3000/makepayment](http://localhost:3000/makepayment) to view it in your browser.<br>
+Output<br>
+
+![alt text](image-25.png)
+
+<br>
 Create a submit function to send phone and amount to our Backend Payment API.
 <br>
 
