@@ -1341,7 +1341,7 @@ export default Addproduct;
 
 Run your App 
 Runs the app in the development mode.\
-Open [http://localhost:3000/add_product](http://localhost:3000/add_product) to view it in your browser.
+Open [http://localhost:3000/addproduct](http://localhost:3000/addproduct) to view it in your browser.
 <br>
 Fill in product details, browse image from computer and press Upload Product button. The data sent to the add_product API and you get a success message.
 
