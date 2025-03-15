@@ -1867,7 +1867,7 @@ Open Addproduct.js and add below navbar <br>
 Add this code inside the root Div.
 
 ```jsx
-<nav className="p-3">
+<nav className="m-4">
       <Link to='/' className="btn btn-dark">GET ALL PRODUCTS</Link>
 </nav>
 ```
