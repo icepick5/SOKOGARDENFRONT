@@ -1573,7 +1573,9 @@ Output <br>
 ![alt text](image-16.png)
 
 
-### Step 8: Make Payment - LIPA NA MPESA.
+### Step 8: Make Payment - Payment Integration.
+
+![alt text](image-24.png)
 
 In this Step, we implement LIPA NA MPESA, this allows customers to pay for products using MPESA. We will be interacting with our Backend API created in https://github.com/modcomlearning/BackendAPI (Step 8) <br/> API Demo <br/>
 
