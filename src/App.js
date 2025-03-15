@@ -5,6 +5,7 @@ import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Addproduct from './components/Addproduct';
 import Getproducts from './components/Getproducts';
+import Makepayment from './components/Makepayment'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -20,6 +21,8 @@ function App() {
             <Route path="/addproduct" element={<Addproduct />} />
             {/* This is the default route  */}
             <Route path="/" element={<Getproducts/>} />
+            {/* Route for make payment */}
+            <Route path="/makepayment" element={<Makepayment/>} />
           </Routes>
     </div>
     </Router>

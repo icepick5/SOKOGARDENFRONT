@@ -1365,7 +1365,7 @@ Import the required modules
 ```jsx
 import { useState, useEffect } from "react"; // for state management
 import axios from "axios"; //For API Access
-import { Link } from "react-router-dom"; // For link to other component
+import { Link, useNavigate } from "react-router-dom"; // For link/navigate to other component
 ```
 
 
@@ -1376,6 +1376,7 @@ Initialize below Hooks
     const [products, setProducts] = useState([]);  // Default to empty array instead of a string
     const [loading, setLoading] = useState(""); //For loading message
     const [error, setError] = useState(""); //error message hook
+    const navigate = useNavigate(); 
 ```
 
 Specify the image location URL, this is where the image image files were saved in pythonanywhere.<br>. 
@@ -1572,14 +1573,166 @@ Output <br>
 ![alt text](image-16.png)
 
 
+### Step 8: Make Payment - LIPA NA MPESA.
+
+In this Step, we implement LIPA NA MPESA, this allows customers to pay for products using MPESA. We will be interacting with our Backend API created in https://github.com/modcomlearning/BackendAPI (Step 8) <br/> API Demo <br/>
+
+In Your React App, Right Click on Components Folder,  
+Create a Component named Makepayment.js.
+
+Inside Create the Component Arrow Function and Return JSX Code.
+<br>
+
+Makepayment.js
+```jsx
+
+const Makepayment = ()=> {
+
+    return(
+        <div>
+             <h1>Make Payment - Lipa NA MPESA</h1>
+        </div>
+    )
+}
+
+export default Makepayment;
+```
+
+In App.js add a Route to Makepayment.js Component, Open App.js and add the Route as shown below.
+
+![alt text](image-18.png)
+
+Test the route
+Run your App 
+Runs the app in the development mode.\
+Open [http://localhost:3000/makepayment](http://localhost:3000/makepayment) to view it in your browser.
+<br>
+Output<br>
+
+![alt text](image-19.png)
+
+<br>
+<b>Implementing the LIPA NA MPESA Logic </b><br>
+To make our App have MPESA Integration, First we need to add some code in Getproducts.js
+
+Open Getproducts.js and locate the <b>'Purchase Now'</b> Button in JSX.
+Currently our Button looks like below <br>
+```jsx
+ <button className="btn btn-dark mt-2 w-100">Purchase Now</button>
+```
+
+Update above Code to;
+
+```jsx
+<button 
+            className="btn btn-dark mt-2 w-100"
+            onClick={() => navigate('/makepayment', { state: { product } })}>
+            Purchase Now
+</button>
+```
+
+Above, onClick 'Purchase Now' Button, we navigate to /makepayment, as we navigate we carry/parse the all the details of the current product that was clicked. 
+we use <b>{ state: { product } }</b> <br>
 
 
+Open Makepayment.js <br>
+
+Import required modules
+
+```jsx
+import { useState } from 'react';
+import {Link, useLocation} from 'react-router-dom'
+```
+
+Receive the product parsed from Getproducts Component, using the Purchase Now Button. <br>
+
+Here, we make use of useLocation() Hook. <br>
+
+```jsx
+//We Receive the product in Makepayment
+    //We use useLocation to receive the product
+    const {product} = useLocation().state || {};
+    //console.log("Res: "+product.product_name)
+```
+<b>seLocation() </b><br>
+The useLocation() hook is a feature from React Router that helps you access information about the current URL in your app. It allows you to read the URL’s path, search variables in a component.
+<br>
+
+using useLocation(), we are able to retrieve 'product' in Makepayment Component. <br>
+
+Next, Create below hooks states to hold the phone number and a success  message
+
+```jsx
+//Hooks to Hold Phone Number and success Message
+    const [phone, setPhone] = useState("")
+    const [message, setMessage] = useState("")
+```
 
 
+In JSX Code, do below form to Request User Phone number <br>
+
+```jsx
+  return(
+        <div>
+            <h1>LIPA NA MPESA</h1>
+            {/* Bind product name and Cost */}
+            <p>Product NAME: {product.product_name}</p>  
+            <p>Product Cost: {product.product_cost}</p>
+      
+            {/* Create a Form to request user phone Number */}
+            <form>
+                  <input 
+                     type="text" 
+                     placeholder='Enter Phone Number'
+                     value={phone}
+                     {/* Update phone number Hook as user types*/}
+                     onChange={(e)=>setPhone(e.target.value)}/> <br /><br />
+                    <button className='btn btn-dark'>
+                       Make Payment
+                    </button>
+            </form>
+        </div>
+    )
+```
 
 
+Create a submit function to send phone and amount to our Backend Payment API.
+<br>
 
+```jsx
+   //Create a submit Function
+    const submit = async(e) =>{
+        e.preventDefault(); // prebent default JS actions
+     //Update loading Hook with a message
+     setMessage("Please wait as we Processs!");
 
+      // Put updated hooks in data variable
+      const data = new FormData();
+      data.append("phone", phone);
+      // Direcly parse the amount from product variable.
+      // We use product.product_cost
+      data.append("amount", product.product_cost);
+
+      //post your data to your Payment Backend API
+      const response = await axios.post(
+        "https://modcom2.pythonanywhere.com/api/mpesa_payment",
+        data
+      );
+      //Update message Hook with a new message
+      setMessage("Please Complete Payment on Your Phone")
+    }
+```
+
+Finally, in the Form opening tag Call the submit Function and bind the message Hook for status messages <br>
+
+```jsx
+<form onSubmit={submit}>
+       {message}
+         ....
+```
+
+<b>Summary</b> <br>
+In above  
 
 
 
