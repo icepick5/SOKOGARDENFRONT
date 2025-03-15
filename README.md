@@ -1679,17 +1679,37 @@ In JSX Code, do below form to Request User Phone number <br>
             <p>Product NAME: {product.product_name}</p>  
             <p>Product Cost: {product.product_cost}</p>
       
-            {/* Create a Form to request user phone Number */}
+        </div>
+    )
+```
+
+
+Run your App<br>
+Open [http://localhost:3000/makepayment](http://localhost:3000/makepayment) to view it in your browser.<br>
+Output<br>
+
+![alt text](image-20.png)
+
+
+In JSX, Add Form that will request for user Phone Number, this is the Phone Number number used in Payment. <br>
+In below form as user types we update the phone Hook using the setPhone() updater function. <br>
+
+```jsx
+ return(
+        <div>
+            <h1>LIPA NA MPESA</h1>
+            <p>Product NAME: {product.product_name}</p>  
+            <p>Product Cost: {product.product_cost}</p>
+      
             <form>
                   <input 
                      type="text" 
                      placeholder='Enter Phone Number'
                      value={phone}
-                     {/* Update phone number Hook as user types*/}
                      onChange={(e)=>setPhone(e.target.value)}/> <br /><br />
-                    <button className='btn btn-dark'>
+                  <button className='btn btn-dark'>
                        Make Payment
-                    </button>
+                  </button>
             </form>
         </div>
     )
@@ -1730,9 +1750,90 @@ Finally, in the Form opening tag Call the submit Function and bind the message H
        {message}
          ....
 ```
+<br>
 
+Full Makepayment.js Code <br>
+
+```jsx
+
+import { useState } from 'react';
+import {useLocation} from 'react-router-dom'
+import  axios  from 'axios';
+const Makepayment = ()=> {
+    // Extract the received product using useLocation()
+    const { product } = useLocation().state || {}; 
+    //Hook to Hold Phone Number
+    const [phone, setPhone] = useState("")
+    const [message, setMessage] = useState("")
+    
+    //Create a submit Function
+    const submit = async(e) =>{
+        e.preventDefault(); // prebent default JS actions
+     //Update loading Hook with a message
+     setMessage("Please wait as we Processs!");
+
+      // Put updated hooks in data variable
+      const data = new FormData();
+      data.append("phone", phone);
+      data.append("amount", product.product_cost);
+
+      //post your data to your Backend API
+      const response = await axios.post(
+        "https://modcom2.pythonanywhere.com/api/mpesa_payment",
+        data
+      );
+
+      setMessage("Please Complete Payment on Your Phone")
+    }
+
+    return(
+        <div>
+            <h1>LIPA NA MPESA</h1>
+            <p>Product NAME: {product.product_name}</p>  
+            <p>Product Cost: {product.product_cost}</p>
+      
+            <form onSubmit={submit}>
+                   {message}
+                  <input 
+                     type="text" 
+                     placeholder='Enter Phone Number'
+                     value={phone}
+                     onChange={(e)=>setPhone(e.target.value)}/> <br /><br />
+                  <button className='btn btn-dark'>
+                       Make Payment
+                  </button>
+            </form>
+        </div>
+    )
+}
+
+export default Makepayment;
+```
+<br>
 <b>Summary</b> <br>
-In above  
+In above Step 8; <br>
+1. We click 'Purchase Now' Button from Getproducts.js Component. <br>
+2. We parse the product details to Makepayment.js. <br>
+3. In Makepayment.js, the parsed product is received using useLocation() <br>
+4. The received product details are extracted and binded in JSX<br/>
+5. We create a Form to request user Phone Nuumber, Update Hooks and Submit data to our Backend API.<br>
+
+
+Run your App<br>
+Open [http://localhost:3000/](http://localhost:3000/) to view it in your browser.<br>
+Output<br>
+
+![alt text](image-21.png)
+
+All products are displayed above. <br>
+
+Click on <b>'Purchase Now' </b> Button. Below Screen Shows. Observe that the product you clicked is displayed in below screen. Showing the name and Cost. Type phone number and Makepayment.
+
+![alt text](image-22.png)
+
+A MPESA prompt - STK PUSH is sent on Your Phone. Enter PIN and make a Purchase. <br>
+
+![alt text](image-23.png)
 
 
 

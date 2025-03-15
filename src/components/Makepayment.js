@@ -7,7 +7,7 @@ const Makepayment = ()=> {
     const { product } = useLocation().state || {}; 
     //Hook to Hold Phone Number
     const [phone, setPhone] = useState("")
-    const [success, setSuccess] = useState("")
+    const [message, setMessage] = useState("")
     
     //Create a submit Function
     const submit = async(e) =>{
