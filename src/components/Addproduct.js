@@ -58,10 +58,12 @@ const Addproduct = () => {
     <div className="row justify-content-center mt-4">
       <div className="col-md-6 card shadow p-4">
         <form onSubmit={submit}>
+            {/* Bind user loding, success, error messages */}
             {loading}
             {message}
             {error}
             <h3>Upload Products</h3>
+            {/* Call setProductName onChange to update  produce name Hook */}
             <input
               type="text"
               placeholder="Enter Product Name"
@@ -70,7 +72,8 @@ const Addproduct = () => {
               onChange={(e) => setProductName(e.target.value)}
               required
             /> <br />
-       
+
+            {/* Call setProductDescription onChange to update  produce description Hook */}
            <textarea
               className="form-control"
               placeholder="Describe your Product"
@@ -80,7 +83,7 @@ const Addproduct = () => {
             ></textarea>
             <br />
       
-
+             {/* Call setProductCost onChange to update  produce cost Hook */}
             <input
               type="number"
               placeholder="Enter Product Cost"
@@ -91,18 +94,17 @@ const Addproduct = () => {
             />
             <br />
         
-
+             {/* Call setProductPhoto onChange to update  produce photo Hook */}
              <b>Browse/Upload Product Image</b>
             <input
               type="file"
               className="form-control"
-              value={product_photo}
               accept="image/*"
               onChange={(e) => setProductPhoto(e.target.files[0])}
               required
             />
             <br />
-     
+           {/* submit button */}
           <button type="submit" className="btn btn-primary">
                Upload Product
           </button>
