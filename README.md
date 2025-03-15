@@ -1385,32 +1385,34 @@ Initialize below Hooks
 
 
 Next, write below code snippet to get all records from get_product_details Backend API. <br>
+Firs, Create an Arrow  Function named getproducts() and write below code <br>
+
+```jsx
+  const getproducts = async()=>{
+        setLoading("Please wait, We are retrieving the products .."); // Set loading message when fetching starts
+        try {
+        const response = await axios.get("https://modcom2.pythonanywhere.com/api/get_product_details")
+        setProducts(response.data)
+        setLoading("")
+        }
+        catch(error){
+            setLoading("")
+            setError("There was an Error")    
+        }
+    }//end function
+```
+
+
+Call Above Functions inside useEffect()
 
 ```jsx
   useEffect(() => {
-        setLoading("Please wait, We are retrieving the products .."); // Set loading message when fetching starts
-
-        axios.get("https://modcom2.pythonanywhere.com/api/get_product_details")
-            .then(function (response) {
-                // Update Hooks
-                console.log(response.data);
-                setProducts(response.data); // important - Update products Hook
-                setLoading("");  // Clear loading message
-            })
-            .catch(function (error) {
-                // Update Hooks
-                //console.log(error);
-                setError("There was an Error");
-                setLoading("");  // Clear loading message
-            });
+       getproducts();
     }, []); // empty dependency array ensures this runs only once when the component mounts
 ```
 <br>
 Here's a simple breakdown of what the useEffect hook does:
 <br><br/>
-<b>Triggering Fetch on Mount:</b>
-<br>
-The useEffect hook is used to run a function when the component mounts. In this case, it runs the API call to fetch product details when the component first loads (due to the empty dependency array []).<br/><br/>
 
 <b>Loading State:</b> <br>
 setLoading("Please wait, We are retrieving the products .."); sets a loading message while the data is being fetched.
@@ -1418,14 +1420,21 @@ setLoading("Please wait, We are retrieving the products .."); sets a loading mes
 <b>API Call:</b> <br>
 The axios.get("https://modcom2.pythonanywhere.com/api/get_product_details") makes a GET request to the provided API URL to retrieve product details.
 <br><br/>
-<b>Success Handling: </b> <br>
-On success (.then), the data from the API (response.data) is logged to the console and set into the products state using setProducts(response.data).
+<b>Response Handling: </b> <br>
+On try block, The response variable containes the products details and set into the products state using setProducts(response.data).
 The loading message is cleared with setLoading("").
 <br><br/>
 <b>Error Handling: </b> <br>
 On error (.catch), an error message is set into the error state with setError("There was an Error").
 The loading message is cleared with setLoading("").
 <br><br/>
+
+<b>Triggering Fetch on Mount:</b>
+<br>
+The useEffect hook is used to run a function when the component mounts. In this case, it runs the API call to fetch product details when the component first loads (due to the empty dependency array []).
+Inside use Effect, we Call getproducts() function.
+<br/><br/>
+
 <b>Summary:</b>
 1. The hook fetches data when the component mounts. <br>
 2. It shows a loading message while the data is being fetched.<br>
@@ -1498,24 +1507,23 @@ const Getproducts = () => {
     //Specify image location URL
     const img_url = "https://modcom2.pythonanywhere.com/static/images/"
     
-    useEffect(() => {
+    const getproducts = async()=>{
         setLoading("Please wait, We are retrieving the products .."); // Set loading message when fetching starts
+        try {
+        const response = await axios.get("https://modcom2.pythonanywhere.com/api/get_product_details")
+        setProducts(response.data)
+        setLoading("")
+        }
+        catch(error){
+            setLoading("")
+            setError("There was an Error")    
+        }
+    }//end function
 
-        axios.get("https://modcom2.pythonanywhere.com/api/get_product_details")
-            .then(function (response) {
-                // Update Hooks
-                //console.log(response.data);
-                setProducts(response.data); // important
-                setLoading("");  // Clear loading message
-            })
-            .catch(function (error) {
-                // Update Hooks
-                //console.log(error);
-                setError("There was an Error");
-                setLoading("");  // Clear loading message
-            });
+    // Call getproducts on Use Effect
+    useEffect(() => {
+       getproducts()
     }, []); // empty dependency array ensures this runs only once when the component mounts
-
 
     return (
         <div className="row">
@@ -1541,19 +1549,20 @@ const Getproducts = () => {
                         <p className="text-muted">{product.product_description}</p>
                         <b className="text-warning">{product.product_cost} KES</b>  <br />
                         <button className="btn btn-dark mt-2 w-100">Purchase Now</button>
-                        
                     </div>
                 </div>
             </div>
         ))}
     </div>
-    
     );
-  
+
 }
 
 export default Getproducts;
 ```
+
+
+
 
 
 

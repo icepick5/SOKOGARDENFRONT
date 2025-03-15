@@ -23,8 +23,9 @@ const Getproducts = () => {
             setLoading("")
             setError("There was an Error")    
         }
-    }
+    }//end function
 
+    // Call getproducts on Use Effect
     useEffect(() => {
        getproducts()
     }, []); // empty dependency array ensures this runs only once when the component mounts
