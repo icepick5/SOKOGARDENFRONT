@@ -1822,11 +1822,11 @@ export default Makepayment;
 <b>Summary</b> <br>
 In above Step 8; <br>
 1. We click 'Purchase Now' Button from Getproducts.js Component. <br>
-2. We parse the product details to Makepayment.js. <br>
+2. Parse the product details to Makepayment.js. <br>
 3. In Makepayment.js, the parsed product is received using useLocation() <br>
 4. The received product details are extracted and binded in JSX<br/>
 5. We create a Form to request user Phone Nuumber, Update Hooks and Submit data to our Backend API.<br>
-
+<br>
 
 Run your App<br>
 Open [http://localhost:3000/](http://localhost:3000/) to view it in your browser.<br>
@@ -1843,6 +1843,8 @@ Click on <b>'Purchase Now' </b> Button. Below Screen Shows. Observe that the pro
 A MPESA prompt - STK PUSH is sent on Your Phone. Enter PIN and make a Purchase. <br>
 
 ![alt text](image-23.png)
+
+<img src="image-23.png" alt="Alt text" width="300"/>
 
 
 
