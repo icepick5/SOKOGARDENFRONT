@@ -1398,25 +1398,25 @@ Next, write below code snippet to get all records from get_product_details Backe
 ```
 <br>
 Here's a simple breakdown of what the useEffect hook does:
-<br>
+<br><br/>
 Triggering Fetch on Mount:
 <br>
-The useEffect hook is used to run a function when the component mounts. In this case, it runs the API call to fetch product details when the component first loads (due to the empty dependency array []).
+The useEffect hook is used to run a function when the component mounts. In this case, it runs the API call to fetch product details when the component first loads (due to the empty dependency array []).<br/><br/>
 
 <b>Loading State:</b> <br>
 setLoading("Please wait, We are retrieving the products .."); sets a loading message while the data is being fetched.
-<br>
+<br><br/>
 <b>API Call:</b> <br>
 The axios.get("https://modcom2.pythonanywhere.com/api/get_product_details") makes a GET request to the provided API URL to retrieve product details.
-<br>
+<br><br/>
 <b>Success Handling: </b> <br>
 On success (.then), the data from the API (response.data) is logged to the console and set into the products state using setProducts(response.data).
 The loading message is cleared with setLoading("").
-<br>
+<br><br/>
 <b>Error Handling: </b> <br>
 On error (.catch), an error message is set into the error state with setError("There was an Error").
 The loading message is cleared with setLoading("").
-<br>
+<br><br/>
 <b>Summary:</b>
 1. The hook fetches data when the component mounts. <br>
 2. It shows a loading message while the data is being fetched.<br>
