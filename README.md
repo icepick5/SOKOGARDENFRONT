@@ -1527,7 +1527,7 @@ const Getproducts = () => {
           {error}
 
         {/* Map over products and display them */}
-        {products.length > 0 && products.map((product) => (
+        {products.map((product) => (
             <div className="col-md-3 justify-content-center mb-4">
                 {/* Card with equal size */}
                 <div className="card shadow card-margin">
@@ -1541,6 +1541,7 @@ const Getproducts = () => {
                         <p className="text-muted">{product.product_description}</p>
                         <b className="text-warning">{product.product_cost} KES</b>  <br />
                         <button className="btn btn-dark mt-2 w-100">Purchase Now</button>
+                        
                     </div>
                 </div>
             </div>
@@ -1548,8 +1549,7 @@ const Getproducts = () => {
     </div>
     
     );
-    
-
+  
 }
 
 export default Getproducts;

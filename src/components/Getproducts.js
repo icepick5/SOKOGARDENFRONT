@@ -12,24 +12,22 @@ const Getproducts = () => {
     //Specify image location URL
     const img_url = "https://modcom2.pythonanywhere.com/static/images/"
     
-    useEffect(() => {
+    const getproducts = async()=>{
         setLoading("Please wait, We are retrieving the products .."); // Set loading message when fetching starts
+        try {
+        const response = await axios.get("https://modcom2.pythonanywhere.com/api/get_product_details")
+        setProducts(response.data)
+        setLoading("")
+        }
+        catch(error){
+            setLoading("")
+            setError("There was an Error")    
+        }
+    }
 
-        axios.get("https://modcom2.pythonanywhere.com/api/get_product_details")
-            .then(function (response) {
-                // Update Hooks
-                //console.log(response.data);
-                setProducts(response.data); // important
-                setLoading("");  // Clear loading message
-            })
-            .catch(function (error) {
-                // Update Hooks
-                //console.log(error);
-                setError("There was an Error");
-                setLoading("");  // Clear loading message
-            });
+    useEffect(() => {
+       getproducts()
     }, []); // empty dependency array ensures this runs only once when the component mounts
-
 
     return (
         <div className="row">
@@ -41,7 +39,7 @@ const Getproducts = () => {
           {error}
 
         {/* Map over products and display them */}
-        {products.length > 0 && products.map((product) => (
+        {products.map((product) => (
             <div className="col-md-3 justify-content-center mb-4">
                 {/* Card with equal size */}
                 <div className="card shadow card-margin">
@@ -60,9 +58,7 @@ const Getproducts = () => {
             </div>
         ))}
     </div>
-    
     );
-    
 
 }
 
