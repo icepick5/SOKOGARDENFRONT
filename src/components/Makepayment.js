@@ -36,7 +36,7 @@ const Makepayment = ()=> {
             <p>Product Cost: {product.product_cost}</p>
       
             <form onSubmit={submit}>
-                   {message}
+                   {message} <br />
                   <input 
                      type="text" 
                      placeholder='Enter Phone Number'
