@@ -35,6 +35,12 @@ const Getproducts = () => {
     return (
         <div className="row">
 
+         <nav className="navbar m-4">
+            <Link to='/addproduct' className="btn btn-dark mx-2">UPLOAD PRODUCTS</Link>
+            <Link to='/signin' className="btn btn-dark mx-2">Sign In</Link>
+            <Link to='/signup' className="btn btn-dark mx-2">Sign Up</Link>
+        </nav>
+
          <h3 className="mt-5">Available Products</h3>
 
         {/* Bind Error Messages */}
@@ -42,7 +48,7 @@ const Getproducts = () => {
           {error}
 
         {/* Map over products and display them */}
-        
+
         {products.map((product) => (
             <div className="col-md-3 justify-content-center mb-4">
                 {/* Card with equal size */}

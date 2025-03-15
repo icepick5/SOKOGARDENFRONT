@@ -4,6 +4,7 @@ import axios from "axios"; //For API Access
 import { Link } from "react-router-dom"; ////For link to other component
 
 const Addproduct = () => {
+
       //Initialize product details hooks
   const [product_name, setProductName] = useState("");
   const [product_description, setProductDescription] = useState("");
@@ -55,7 +56,13 @@ const Addproduct = () => {
  
 
   return (
+    
     <div className="row justify-content-center mt-4">
+
+      <nav className="navbar p-3">
+           <Link to='/' className="btn btn-dark">GET ALL PRODUCTS</Link>
+      </nav>
+
       <div className="col-md-6 card shadow p-4">
         <form onSubmit={submit}>
             {/* Bind user loding, success, error messages */}

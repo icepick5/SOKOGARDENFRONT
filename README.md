@@ -1840,10 +1840,51 @@ Click on <b>'Purchase Now' </b> Button. Below Screen Shows. Observe that the pro
 
 ![alt text](image-22.png)
 
-A MPESA prompt - STK PUSH is sent on Your Phone. Enter PIN and make a Purchase. <br>
+An MPESA prompt - STK PUSH is sent to Your Phone. Enter PIN and Make a Purchase. <br>
 
 <img src="image-23.png" alt="Alt text" width="400"/>
 
+<br>
+
+### Step 9: Navigation/Navbar
+In this step, we create a navigation within the App.
+1. Navigate from Get Products to Add Product. <br>
+Open Getproducts.js and add below navbar <br>
+Add this code inside the root Div.
+
+```jsx
+<nav className="navbar m-4">
+            <Link to='/addproduct' className="btn btn-dark mx-2">UPLOAD PRODUCTS</Link>
+            <Link to='/signin' className="btn btn-dark mx-2">Sign In</Link>
+            <Link to='/signup' className="btn btn-dark mx-2">Sign Up</Link>
+</nav>
+```
+Above makes users Navigate from Get Products to Upload Products, Signin and Signup. <br>
+
+
+2. Navigate from Add Product to Get Products. <br>
+Open Addproduct.js and add below navbar <br>
+Add this code inside the root Div.
+
+```jsx
+<nav className="navbar p-3">
+      <Link to='/' className="btn btn-dark">GET ALL PRODUCTS</Link>
+</nav>
+```
+
+
+Run your App<br>
+Open [http://localhost:3000/](http://localhost:3000/) to view it in your browser.<br>
+Output<br>
+![alt text](image-26.png)
+
+<br>
+Users can now navigate from;<br> 
+1. Getroducts to Addproducts, Signin and Signup. <br>
+2. Addproduct to Getproducts.
+
+
+DONE.
 
 
 
