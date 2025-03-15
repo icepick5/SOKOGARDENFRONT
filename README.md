@@ -1853,7 +1853,7 @@ Open Getproducts.js and add below navbar <br>
 Add this code inside the root Div.
 
 ```jsx
-<nav className="navbar m-4">
+<nav className="m-4">
             <Link to='/addproduct' className="btn btn-dark mx-2">UPLOAD PRODUCTS</Link>
             <Link to='/signin' className="btn btn-dark mx-2">Sign In</Link>
             <Link to='/signup' className="btn btn-dark mx-2">Sign Up</Link>
@@ -1867,7 +1867,7 @@ Open Addproduct.js and add below navbar <br>
 Add this code inside the root Div.
 
 ```jsx
-<nav className="navbar p-3">
+<nav className="p-3">
       <Link to='/' className="btn btn-dark">GET ALL PRODUCTS</Link>
 </nav>
 ```

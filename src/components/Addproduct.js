@@ -59,7 +59,7 @@ const Addproduct = () => {
     
     <div className="row justify-content-center mt-4">
 
-      <nav className="navbar p-3">
+      <nav className="p-3">
            <Link to='/' className="btn btn-dark">GET ALL PRODUCTS</Link>
       </nav>
 
