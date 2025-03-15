@@ -1575,7 +1575,7 @@ Output <br>
 
 ### Step 8: Make Payment - Payment Integration.
 
-![alt text](image-24.png)
+<img src="image-24.png" alt="Alt text" width="300"/>
 
 In this Step, we implement LIPA NA MPESA, this allows customers to pay for products using MPESA. We will be interacting with our Backend API created in https://github.com/modcomlearning/BackendAPI (Step 8) <br/> API Demo <br/>
 
@@ -1842,9 +1842,7 @@ Click on <b>'Purchase Now' </b> Button. Below Screen Shows. Observe that the pro
 
 A MPESA prompt - STK PUSH is sent on Your Phone. Enter PIN and make a Purchase. <br>
 
-![alt text](image-23.png)
-
-<img src="image-23.png" alt="Alt text" width="300"/>
+<img src="image-23.png" alt="Alt text" width="400"/>
 
 
 
