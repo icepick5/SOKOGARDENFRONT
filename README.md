@@ -1428,7 +1428,7 @@ On error (.catch), an error message is set into the error state with setError("T
 The loading message is cleared with setLoading("").
 <br><br/>
 
-<b>Triggering Fetch on Mount:</b>
+<b>Triggering Fetch on Mount: - useEffect()</b>
 <br>
 The useEffect hook is used to run a function when the component loads. In this case, it runs the API call to fetch product details when the component first loads. useEffect runs after the component renders.  If you include variables in the array[], useEffect will run whenever those variables change. In our the code inside useEffect run only once when Page loads.
 <br>
