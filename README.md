@@ -1880,7 +1880,7 @@ Output<br>
 
 <br>
 Users can now navigate from;<br> 
-1. Getroducts to Addproducts, Signin and Signup. <br>
+1. Getproducts to Addproducts, Signin and Signup. <br>
 2. Addproduct to Getproducts.
 
 
