@@ -957,7 +957,7 @@ See below screenshot for wrong credentials.
 ![alt text](image-12.png)
 
 
-### Step 6a: Upload Product  - Form, Hooks
+### Step 6a: Add/Upload Product  - Form, Hooks
 In this step we will be Uploading/Adding product to our API created in  https://github.com/modcomlearning/BackendAPI  (Step 6). <br>  Add_product API Demo.
 <br>
 
