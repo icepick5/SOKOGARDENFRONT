@@ -1218,13 +1218,13 @@ Prevent the default form submission behavior:
 ```javascript
   e.preventDefault();
 ```
-
+<br><br>
 Displays a loading message while processing the request:
 
 ```javascript
   setLoading("Please wait ... ");
 ```
-
+<br><br>
 Collects data from the input fields and appends them to a FormData object:
 
 ```javascript
@@ -1234,7 +1234,7 @@ data.append("product_description", product_description);
 data.append("product_cost", product_cost);
 data.append("product_photo", product_photo);
 ```
-
+<br><br>
 Sends the collected data to the backend API using a POST request:
 
 ```javascript
@@ -1243,21 +1243,21 @@ const response = await axios.post(
   data
 );
 ```
-
+<br><br>
 If the submission is successful:
-<br>
+<br><br>
 Clears the loading message:
 
 ```javascript
 setLoading("");
 ```
-
+<br><br>
 Displays a success message:
 
 ```javascript
 setMessage("Product Added successfully!");
 ```
-
+<br><br>
 Resets the input fields to be empty for the next submission:
 
 ```javascript
@@ -1266,16 +1266,15 @@ setProductDescription("");
 setProductCost("");
 setProductPhoto("");
 ```
+<br><br>
 If there is an error (e.g., network issue or server error), it displays an error message:
 
 ```javascript
 setError("Failed to add product. Please try again.");
 ```
-
+<br>
 This approach ensures that the process of adding a product to the backend is managed smoothly, with clear feedback to the user for both success and failure scenarios.
-
-
-
+<br><br>
 Finally, Call the submit() Function onSubmit of the form as shown below and Bind the loading, messages and error hooks in the form to show the user loading, messages and error messages <br>
 Inside your form tag add below code. 
 
