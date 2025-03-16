@@ -51,7 +51,7 @@ Replace the code you removed with a heading and as shown below.
 ![alt text](image-2.png)
 
 
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 <br>
@@ -91,7 +91,7 @@ In App.css, Please change the min-height to 20vh, see below, This reduces the he
 ```
 
 
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -668,7 +668,7 @@ const Signup = () => {
 export default Signup;
 ```
 
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000/signup](http://localhost:3000/signup) to view it in your browser.
 
@@ -945,7 +945,7 @@ export default Signin;
 
 
 
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000/signin](http://localhost:3000/signin) to view it in your browser.
 
@@ -1034,7 +1034,7 @@ export default Addproduct;
 ```
 <br>
 
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000/add_product](http://localhost:3000/add_product) to view it in your browser.
 <br>
@@ -1136,7 +1136,7 @@ export default Addproduct;
 ```
 
 
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000/addproduct](http://localhost:3000/addproduct) to view it in your browser.
 <br>
@@ -1407,7 +1407,7 @@ const Addproduct = () => {
 export default Addproduct;
 ```
 
-Run your App 
+Run your App  <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000/addproduct](http://localhost:3000/addproduct) to view it in your browser.
 <br>
@@ -1630,7 +1630,7 @@ export default Getproducts;
 ```
 
 
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000/](http://localhost:3000/) to view it in your browser.
 <br>
@@ -1671,7 +1671,7 @@ In App.js add a Route to Makepayment.js Component, Open App.js and add the Route
 ![alt text](image-18.png)
 
 Test the route
-Run your App 
+Run your App <br>
 Runs the app in the development mode.\
 Open [http://localhost:3000/makepayment](http://localhost:3000/makepayment) to view it in your browser.
 <br>
