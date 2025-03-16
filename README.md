@@ -1158,7 +1158,7 @@ First initialize below hooks that used to Handle loading, success and Error mess
   const [error, setError] = useState("");
 ```
 
-Next, Inside Signup Arrow Function (Below the Hooks Initialization) create below submit Arrow function.
+Next, Inside Addproduct Arrow Function (Below the Hooks Initialization) create below submit Arrow function.
 
 ```jsx
   const submit = async (e) => {
@@ -1168,7 +1168,7 @@ Next, Inside Signup Arrow Function (Below the Hooks Initialization) create below
 
 Next is submit function Logic<br> This will include capturing product data in updated hooks and POST to our add_product Backend API. <br>
 
-Blow is the submit fucntion implementation.
+Below is the submit fucntion implementation.
 
   ```jsx
   //Submit Function
