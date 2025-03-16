@@ -1331,7 +1331,7 @@ const Addproduct = () => {
     //Prevent default actions
     e.preventDefault();
     //update loading hook to show progress
-    setLoading("Pleaser wait ... ");
+    setLoading("Please wait ... ");
 
     //add all updated hooks to data variable
     const data = new FormData();
