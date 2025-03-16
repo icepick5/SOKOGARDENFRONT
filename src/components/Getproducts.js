@@ -73,7 +73,6 @@ const Getproducts = () => {
                     </div>
                 </div>
             </div>
-
         ))}
     </div>
     );

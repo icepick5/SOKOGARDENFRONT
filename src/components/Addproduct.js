@@ -10,6 +10,7 @@ const Addproduct = () => {
   const [product_description, setProductDescription] = useState("");
   const [product_cost, setProductCost] = useState("");
   const [product_photo, setProductPhoto] = useState("");
+  
     // Hooks for information messages
   const [loading, setLoading] = useState("");
   const [message, setMessage] = useState("");

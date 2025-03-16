@@ -992,18 +992,102 @@ import axios from "axios";//for API Access
 import { Link } from "react-router-dom"; //for components linking
 
 const Addproduct = () => {
+  
+  //  Do HTML product Upload Form
+  return (
+    <div className="row justify-content-center mt-4">
+      <div className="col-md-6 card shadow p-4">
+        <form>
+            <h3>Upload Products</h3>
+             {/* Call setProductName onChange to update  produce name Hook */}
+            <input
+              type="text"
+              placeholder="Enter Product Name"
+              className="form-control"
+              required
+            /> 
+            <br />
+            {/* Call setProductDescription onChange to update  produce description Hook */}
+           <textarea
+              className="form-control"
+              placeholder="Describe your Product"
+              required
+            ></textarea>
+            <br />
+      
+              {/* Call setProductCost onChange to update  produce cost Hook */}
+            <input
+              type="number"
+              placeholder="Enter Product Cost"
+              className="form-control"
+              required
+            />
+            <br />
+        
+                {/* Call setProductPhoto onChange to update  produce photo Hook */}
+             <b>Browse/Upload Product Image</b>
+            <input
+              type="file"
+              className="form-control"
+              accept="image/*"
+              required
+            />
+            <br />
+     
+          <button type="submit" className="btn btn-primary">
+               Upload Product
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default Addproduct;
+```
+<br>
+
+Run your App 
+Runs the app in the development mode.\
+Open [http://localhost:3000/add_product](http://localhost:3000/add_product) to view it in your browser.
+<br>
+
+Output.<br>
+
+![alt text](image-15.png)
+
+<br>
+
+Next, Initialize below Hooks that will hold our input values,The hooks are initialized to empty strings, meaning they hold no value.<br>
+They will be updated when the user types values on the input using onChange().
+
+Below is the updated Code with Hooks initialized and Updated onChange() of inputs.<br>
+
+```jsx
   //Initialize product details hooks
   const [product_name, setProductName] = useState("");
   const [product_description, setProductDescription] = useState("");
   const [product_cost, setProductCost] = useState("");
   const [product_photo, setProductPhoto] = useState("");
+```
 
-  // Hooks for information messages
-  const [loading, setLoading] = useState("");
-  const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
 
-  
+Below is the Code with Hooks <br>
+
+```jsx
+//Imports
+import { useState } from "react";// for variable state mangement
+import axios from "axios";//for API Access
+import { Link } from "react-router-dom"; //for components linking
+
+const Addproduct = () => {
+
+  //Initialize below Hooks
+  const [product_name, setProductName] = useState("");
+  const [product_description, setProductDescription] = useState("");
+  const [product_cost, setProductCost] = useState("");
+  const [product_photo, setProductPhoto] = useState("");
+
   //  Do HTML product Upload Form
   return (
     <div className="row justify-content-center mt-4">
@@ -1063,25 +1147,31 @@ const Addproduct = () => {
 
 export default Addproduct;
 ```
-<br>
+
 
 Run your App 
 Runs the app in the development mode.\
 Open [http://localhost:3000/add_product](http://localhost:3000/add_product) to view it in your browser.
 <br>
+NB: we can bind Hooks on UI to find out they are being updated as the user types.
 
-Output.<br>
 
-![alt text](image-15.png)
-
-<br>
 
 ### Step 6b: Upload Product - Submit
 
 In Step 6a, we created a Product Upload form and Set up the Hooks to be used.
 Next, We do a submit function, This function will collect data from updated Hooks and submit to add_product Backend API.
 
-Inside Signup Arrow Function (Below the Hooks Initialization) create below submit Arrow function.
+First initialize below hooks that used to Handle loading, success and Error messages(information messages)<br>
+
+```jsx
+    // Hooks for information messages
+  const [loading, setLoading] = useState("");
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+```
+
+Next, Inside Signup Arrow Function (Below the Hooks Initialization) create below submit Arrow function.
 
 ```jsx
   const submit = async (e) => {
@@ -1349,15 +1439,13 @@ Output.<br>
 
 ![alt text](image-15.png)
 
+
 ### Step 7a: Get Products
 
 In this step we will be getting all products posted on the API. The get products Backend API implementation can be accessed at https://github.com/modcomlearning/BackendAPI(Step7)<br>
 
 In your React App Open Getproducts.js
 <br>
-
-
-
 
 
 Import the required modules 
