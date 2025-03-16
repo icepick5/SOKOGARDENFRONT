@@ -1244,15 +1244,14 @@ const response = await axios.post(
 );
 ```
 <br><br>
-If the submission is successful:
-<br><br>
-Clears the loading message:
+If the submission is successful, Clears the loading message so that its stops to display.
+Update the loading Hook
 
 ```javascript
 setLoading("");
 ```
 <br><br>
-Displays a success message:
+Update message Hook, Displays a success message:
 
 ```javascript
 setMessage("Product Added successfully!");
