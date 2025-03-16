@@ -1151,7 +1151,7 @@ export default Addproduct;
 
 Run your App 
 Runs the app in the development mode.\
-Open [http://localhost:3000/add_product](http://localhost:3000/add_product) to view it in your browser.
+Open [http://localhost:3000/addproduct](http://localhost:3000/addproduct) to view it in your browser.
 <br>
 NB: we can bind Hooks on UI to find out they are being updated as the user types.
 
