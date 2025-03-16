@@ -970,19 +970,6 @@ import axios from "axios"; //for API Access
 import { Link } from "react-router-dom"; //for components linking
 ```
 
-Then Initialize below Hooks (Inside your Signup Arrow function).
-
-```jsx
-  const [product_name, setProductName] = useState("");
-  const [product_description, setProductDescription] = useState("");
-  const [product_cost, setProductCost] = useState("");
-  const [product_photo, setProductPhoto] = useState("");
-  const [loading, setLoading] = useState("");
-  const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
-```
-Above hooks have been initialized to empty String, we will be updating them later.
-<br>
 Next, Create the Upload HTML Form in JSX <br>
 
 ```jsx
@@ -1179,14 +1166,7 @@ Next, Inside Signup Arrow Function (Below the Hooks Initialization) create below
   }
 ```
 
-Then in Product Upload Form in JSX call above function using onSubmit() in the form opening tag, This means when the form is submitted it Calls the submit() function.
-
-```jsx
-   <form onSubmit={submit}>
-
-```
-
-Next is the submit function Logic<br> This will include capturing product data in updated hooks and POST to our add_product Backend API. <br>
+Next is submit function Logic<br> This will include capturing product data in updated hooks and POST to our add_product Backend API. <br>
 
 Blow is the submit fucntion implementation.
 
@@ -1296,7 +1276,7 @@ This approach ensures that the process of adding a product to the backend is man
 
 
 
-Finally, Bind the loading, messages and error hooks in the form to show the user loading, messages and error messages <br>
+Finally, Call the submit() Function onSubmit of the form as shown below and Bind the loading, messages and error hooks in the form to show the user loading, messages and error messages <br>
 Inside your form tag add below code. 
 
 ```jsx  
