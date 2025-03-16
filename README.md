@@ -1144,7 +1144,7 @@ NB: we can bind Hooks on UI to find out they are being updated as the user types
 
 
 
-### Step 6b: Add/Upload Product - Submit
+### Step 6b: Add/Upload Product - Submit to API
 
 In Step 6a, we created a Product Upload form and Set up the Hooks to be used.
 Next, We do a submit function, This function will collect data from updated Hooks and submit to add_product Backend API.
