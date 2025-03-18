@@ -2058,9 +2058,8 @@ Engaging in this project equips students with the versatility to tackle various 
 <br><br>
 <b>🚀 Get creative and start building! 💡💻 <br>
 
-<br>
 <b>Credits </b>
-The successful completion of the SokoGarden project was made possible through the dedicated efforts and unwavering support of the MODCOM Institute trainers and management. Their commitment to providing software training and hands-on experience has been instrumental in guiding students through this comprehensive full-stack development journey.
+The successful completion of the SokoGarden project was made possible through the dedicated efforts and unwavering support of the MODCOM Institute trainers and management. Their commitment to providing software training and hands-on experience has been instrumental in guiding students through this comprehensive full-stack development journey. 
 <br>
 Stay updated with their latest news and events by following us on X @ModcomKenya <br>
 
