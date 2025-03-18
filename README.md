@@ -2021,7 +2021,7 @@ This project provided hands-on experience in integrating frontend and backend te
 <br><br>
 You can explore the project further using the links below:<br>
 🔹 Frontend Repository:SokoGarden Frontend:  https://github.com/modcomlearning/sokogarden<br>
-🔹 Backend Repository: Backend API: https://github.com/modcomlearning/BackendAPI  <br>
+🔹 Backend Repository: SokoGarden Backend API: https://github.com/modcomlearning/BackendAPI  <br>
 🔹 App Link : https://sokogarden.vercel.app/ <br>
 
 <br>
