@@ -2011,7 +2011,20 @@ Users can now navigate from;<br>
 2. Addproduct to Getproducts.
 
 <br>
-DONE.
+
+
+### Conclusion
+Throughout this Full Stack Development module, we successfully built a complete Full Stack application—SokoGarden. The frontend was developed using JavaScript and React.js, while the backend was powered by Python Flask Framework with an SQL Database. API testing was conducted using Insomnia (https://insomnia.rest/), and the API was hosted on PythonAnywhere.
+<br><br>
+This project provided hands-on experience in integrating frontend and backend technologies, API development and testing, database management, and deployment. By working on SokoGarden, students have gained proficiency in building, testing, and deploying Full Stack applications—a crucial skill set for real-world software development.
+<br><br>
+You can explore the project further using the links below:
+🔹 Frontend Repository: GitHub - SokoGarden Frontend <br>
+🔹 Backend Repository: GitHub - Backend API  <br>
+🔹 App Link : https://sokogarden.vercel.app/ <br>
+
+<br>
+<b>Well done on reaching this milestone! Keep building, keep learning, and happy coding!</b>
 
 
 
