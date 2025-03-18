@@ -2019,9 +2019,9 @@ Throughout this Full Stack Development module, we successfully built a complete 
 <br><br>
 This project provided hands-on experience in integrating frontend and backend technologies, API development and testing, database management, and deployment. By working on <b>SokoGarden</b>, students have gained proficiency in building, testing, and deploying Full Stack applications—a crucial skill set for real-world software development.
 <br><br>
-You can explore the project further using the links below:
-🔹 Frontend Repository: GitHub - SokoGarden Frontend <br>
-🔹 Backend Repository: GitHub - Backend API  <br>
+You can explore the project further using the links below:<br>
+🔹 Frontend Repository:SokoGarden Frontend:  https://github.com/modcomlearning/sokogarden<br>
+🔹 Backend Repository: Backend API: https://github.com/modcomlearning/BackendAPI  <br>
 🔹 App Link : https://sokogarden.vercel.app/ <br>
 
 <br>
