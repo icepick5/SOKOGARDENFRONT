@@ -2014,9 +2014,10 @@ Users can now navigate from;<br>
 
 
 ### Conclusion
-Throughout this Full Stack Development module, we successfully built a complete Full Stack application—SokoGarden. The frontend was developed using JavaScript and React.js, while the backend was powered by Python Flask Framework with an SQL Database. API testing was conducted using Insomnia (https://insomnia.rest/), and the API was hosted on PythonAnywhere.
+Throughout this Full Stack Development module, we successfully built a complete Full Stack application—<b>SokoGarden</b>. The frontend was developed using <b>JavaScript and React.js</b>, while the backend was powered by Python Flask Framework with an SQL Database. API testing was conducted using Insomnia (https://insomnia.rest/), and the API was hosted on <b>PythonAnywhere.</b>.
+
 <br><br>
-This project provided hands-on experience in integrating frontend and backend technologies, API development and testing, database management, and deployment. By working on SokoGarden, students have gained proficiency in building, testing, and deploying Full Stack applications—a crucial skill set for real-world software development.
+This project provided hands-on experience in integrating frontend and backend technologies, API development and testing, database management, and deployment. By working on <b>SokoGarden</b>, students have gained proficiency in building, testing, and deploying Full Stack applications—a crucial skill set for real-world software development.
 <br><br>
 You can explore the project further using the links below:
 🔹 Frontend Repository: GitHub - SokoGarden Frontend <br>
