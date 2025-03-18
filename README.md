@@ -2064,8 +2064,8 @@ The successful completion of the SokoGarden project was made possible through th
 Stay updated with their latest news and events by following us on X @ModcomKenya <br>
 
 Thank you all for making this project a success!.
-
-<img src="image-28.png" height = "200">
+<br>
+<img src="image-28.png" width = "200">
 
 ![alt text](image-28.png)
 
