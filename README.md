@@ -2032,10 +2032,8 @@ You can explore the project further using the links below:<br>
 ### Next, Steps.
 Now that you’ve successfully completed the SokoGarden project, it's time to take your skills to the next level!<br>
 
-✅ Challenge: Build upon the foundation of SokoGarden by coming up with a new eCommerce concept. This will allow you to:<br> Come up with your own Full Stack App <b>(Related to SokoGarden)</b>.
+✅ Challenge: Build upon the foundation of SokoGarden by coming up with a new eCommerce concept. 
 <br>
-<b>NB: The student can Present this Project as <b>Final Project</b> Later at the end of the Course in May.</b> 
- <br>
 
  #### Guideline
  Students' must<br> 
@@ -2045,9 +2043,9 @@ Now that you’ve successfully completed the SokoGarden project, it's time to ta
    with <br> Give your Application a Name. Ours was SokoGarden . Yours? <br>
 🔹 Customize the frontend and backend to fit your Concept. <br>
 🔹 Enhance the Frontend User Interface - Look and Feel. <br>
-🔹 Come up with new features i.e Carousel, Footers, About Us Components, Share Products,  etc <br>
+🔹 Come up with any new features i.e Carousel, Footers, About Us Components, Share Products,  etc <br>
 🔹 Demonstrate understanding of Full Stack Development - Frontend - Backend  etc <br>
-<br><br>
+<br>
 
 
 
