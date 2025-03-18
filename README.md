@@ -2055,8 +2055,8 @@ Building upon the SokoGarden project offers students a comprehensive understandi
 <br>
 
 Engaging in this project equips students with the versatility to tackle various applications in the industry. The foundational concepts learned are transferable across different projects, as full-stack development principles remain consistent. <br>This adaptability ensures that students are well-prepared to meet diverse market demands.
-<br>
-🚀 Get creative and start building! 💡💻
+<br><br>
+<b>🚀 Get creative and start building! 💡💻 <br>
 
 
 
