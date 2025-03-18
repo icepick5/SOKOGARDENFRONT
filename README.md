@@ -2047,7 +2047,17 @@ Now that you’ve successfully completed the SokoGarden project, it's time to ta
 🔹 Demonstrate understanding of Full Stack Development - Frontend - Backend  etc <br>
 <br>
 
+### Notes
+Building upon the SokoGarden project offers students a comprehensive understanding of Full Stack Development. This experience enables them to grasp the essential components of full-stack applications, including: <br>
 
+<b>Frontend Development:</b> Crafting user interfaces using technologies like HTML, CSS, and JavaScript frameworks such as React.js.<br>
+
+<b>Backend Development:</b> Implementing server-side logic with languages like Python and frameworks such as Flask.
+<br>
+<b>Database Management: </b> Handling data storage and retrieval using SQL databases.
+<br>
+
+Engaging in this project equips students with the versatility to tackle various applications in the industry. The foundational concepts learned are transferable across different projects, as full-stack development principles remain consistent. <br>This adaptability ensures that students are well-prepared to meet diverse market demands.
 
 
 
