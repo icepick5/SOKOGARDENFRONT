@@ -2027,7 +2027,7 @@ You can explore the project further using the links below:<br>
 <br>
 <b>Well done on reaching this milestone! Keep building, keep learning, and happy coding!</b>
 <br>
-<i>Note: Before Proceeding to the Next Module - Android Apps Development, we need to create Full Stack Application Projects/i> <br>.
+<i>Note: Before Proceeding to the Next Module - Android Apps Development, we need to create Full Stack Application Projects</i> <br>.
 
 ### Next, Steps.
 Now that you’ve successfully completed the SokoGarden project, it's time to take your skills to the next level!<br>
