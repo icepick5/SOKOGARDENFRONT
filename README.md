@@ -2065,7 +2065,7 @@ Stay updated with their latest news and events by following us on X @ModcomKenya
 
 Thank you all for making this project a success!.
 <br>
-<img src="image-28.png" width = "200">
+<img src="image-28.png" width = "300">
 <br>
 
 
