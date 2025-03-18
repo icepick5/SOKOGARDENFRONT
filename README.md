@@ -2039,8 +2039,7 @@ Now that you’ve successfully completed the SokoGarden project, it's time to ta
  Students' must<br> 
 🔹 Apply what they have learned in a real-world project. <br>
 🔹 Come up with an idea. <br>
-🔹 Identify what specific Products/Services your application is dealing    
-   with <br> Give your Application a Name. Ours was SokoGarden . Yours? <br>
+🔹 Identify what specific Products/Services your application is dealing with, Give your Application a Name.<br>
 🔹 Customize the frontend and backend to fit your Concept. <br>
 🔹 Enhance the Frontend User Interface - Look and Feel. <br>
 🔹 Come up with any new features i.e Carousel, Footers, About Us Components, Share Products,  etc <br>
