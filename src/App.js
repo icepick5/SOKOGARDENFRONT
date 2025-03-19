@@ -1,6 +1,6 @@
 
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Addproduct from './components/Addproduct';
@@ -10,7 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
     <div className="App">
           <header className="App-header">
               <h1>SokoGarden - Buy & Sell Online</h1>
@@ -25,7 +25,7 @@ function App() {
             <Route path="/makepayment" element={<Makepayment/>} />
           </Routes>
     </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 

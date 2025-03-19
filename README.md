@@ -177,14 +177,14 @@ We need to create routing/navigation for them.This means how do we access them o
 In this Step we will create Router for our App.
 in App.js add below import for routing capabilities
  ```javascript
-    import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
+    import { BrowserRouter, Route, Routes} from "react-router-dom";
 ```
 Then inside the App.js, under the JSX code, wrap the 'DIV' with a Router
 
 ```javascript
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 
 
 function App() {
@@ -237,7 +237,7 @@ Your Full App.js Code after adding the Router Code
 ```jsx
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Signup from './components/Signup';
 import Signin from './components/Signin';
 import Addproduct from './components/Addproduct';
@@ -245,7 +245,7 @@ import Getproducts from './components/Getproducts';
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
     <div className="App">
           <header className="App-header">
               <h1>SokoGarden - Buy & Sell Online</h1>
@@ -258,7 +258,7 @@ function App() {
             <Route path="/" element={<Getproducts/>} />
           </Routes>
     </div>
-    </Router>
+    </BrowserRouter>
   );
 }
 
