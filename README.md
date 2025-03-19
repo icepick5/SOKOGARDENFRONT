@@ -2042,7 +2042,7 @@ Now that you’ve successfully completed the SokoGarden project, it's time to ta
 🔹 Customize the frontend and backend to fit your Concept. <br>
 🔹 Enhance the Frontend User Interface - Look and Feel. <br>
 🔹 Come up with any new features 
-🔹 New Featuresi.e Carousel, Footers, About Us Components, Share Products,Filter, Delete etc <br>
+🔹 New Featuresi.e Carousel, Footers, About Us, Share Products,Filter, Delete etc <br>
 🔹 Demonstrate understanding of Full Stack Development - Frontend - Backend  etc <br>
 <br>
 
