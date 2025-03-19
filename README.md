@@ -2041,13 +2041,13 @@ Now that you’ve successfully completed the SokoGarden project, it's time to ta
 🔹 Identify what specific Products/Services your application is dealing with.<br>
 🔹 Customize the frontend and backend to fit your Concept. <br>
 🔹 Enhance the Frontend User Interface - Look and Feel. <br>
-🔹 Come up with any new features 
-🔹 New Featuresi.e Carousel, Footers, About Us, Share Products,Filter, Delete etc <br>
-🔹 Demonstrate understanding of Full Stack Development - Frontend - Backend  etc <br>
+🔹 Come up with any new features <br>
+🔹 New Features i.e Carousel, Footers, About Us, Share Products,Filter, Delete etc <br>
+🔹 Demonstrate understanding of Full Stack Development Concept - Frontend-Backend. <br>
 <br>
 
 ### Notes
-Building upon the SokoGarden project offers students a comprehensive understanding of Full Stack Development. This experience enables them to grasp the essential components of full-stack applications, including: <br>
+Building upon the SokoGarden project offers students a comprehensive understanding the CONCEPT of Full Stack Development. This experience enables them to grasp the essential components of full-stack applications, including: <br>
 
 <b>Frontend Development:</b> Crafting user interfaces using technologies like HTML, CSS, and JavaScript frameworks such as React.js.<br>
 <b>Backend Development:</b> Implementing server-side logic with languages like Python and frameworks such as Flask.
@@ -2062,8 +2062,8 @@ Engaging in this project equips students with the versatility to tackle various 
 <b>Credits </b>
 The successful completion of the SokoGarden project was made possible through the dedicated efforts and unwavering support of the MODCOM Institute trainers and management. Their commitment to providing software training and hands-on experience has been instrumental in guiding students through this comprehensive full-stack development journey. 
 <br>
-Stay updated with their latest news and events by following us on X @ModcomKenya <br>
-
+Stay updated with our latest news and events by following us on X @ModcomKenya <br>
+Website : https://modcom.co.ke <br>
 Thank you all for making this project a success!.
 
 
