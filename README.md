@@ -1168,7 +1168,7 @@ Next, Inside Addproduct Arrow Function (Below the Hooks Initialization) create b
 
 Next is submit function Logic<br> This will include capturing product data in updated hooks and POST to our add_product Backend API. <br>
 
-Below is the submit fucntion implementation.
+Below is the submit function implementation.
 
   ```jsx
   //Submit Function
@@ -1789,16 +1789,8 @@ The useLocation() hook is a feature from React Router that helps you access info
 
 using useLocation(), we are able to retrieve 'product' in Makepayment Component. <br>
 
-Next, Create below hooks states to hold the phone number and a success  message
 
-```jsx
-//Hooks to Hold Phone Number and success Message
-    const [phone, setPhone] = useState("")
-    const [message, setMessage] = useState("")
-```
-
-
-In JSX Code, do below form to Request User Phone number <br>
+In JSX Code, Bind the product_name and product_cost in JSX <br>
 
 ```jsx
   return(
@@ -1820,6 +1812,14 @@ Output<br>
 ![alt text](image-20.png)
 
 
+Next, Create below hooks states to hold the phone number and a success  message
+
+```jsx
+//Hooks to Hold Phone Number and success Message
+    const [phone, setPhone] = useState("")
+    const [message, setMessage] = useState("")
+```
+<br>
 In JSX, Add Form that will request for user Phone Number, this is the Phone Number number used in Payment. <br>
 In below form as user types we update the phone Hook using the setPhone() updater function. <br>
 
